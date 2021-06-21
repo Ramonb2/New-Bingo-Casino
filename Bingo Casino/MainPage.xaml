@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bingo_Casino.MainPage"
+             xmlns:helpers="clr-namespace:Bingo_Casino.Helpers"
+             >
+
+
+    <StackLayout x:Name="stackL" BackgroundColor="Green">
+        <!--home age-->
+        <Button x:Name="Back" Text="Back" Clicked="Back_Clicked" VerticalOptions="Start" HorizontalOptions="Start" Margin="10,10" TextColor="White" BackgroundColor="Green" FontSize="14" />
+
+        <Button x:Name="BlackJack" Text="Black Jack" Clicked="BlackJack_Clicked" Margin="200,150" HeightRequest="100" BackgroundColor="Green" FontSize="30" TextColor="White"/>
+        <Button x:Name="Poker" Text="Poker" Clicked="Poker_Clicked" VerticalOptions="Center" Margin="200,0" HeightRequest="100" TextColor="White" BackgroundColor="Green" FontSize="30"/>
+        <Button x:Name="Settings" Text="Settings" Clicked="Settings_Clicked" Margin="200,150" HeightRequest="100" TextColor="White" BackgroundColor="Green" FontSize="30"/>
+
+
+        <Label x:Name="lblSettings" Text="Settings" TextColor="White" BackgroundColor="Green" FontSize="30" IsVisible="false" HorizontalOptions="Center" VerticalOptions="Center"/>
+
+        <Button x:Name="Sound" Text="Sound On" Clicked="Sound_Clicked" Margin="200,0" HeightRequest="50" BackgroundColor="Green" FontSize="15" TextColor="White" IsVisible="false"/>
+        <Button x:Name="Tokens" Text="Buy Tokens"  VerticalOptions="Center" Margin="200,0" HeightRequest="50" TextColor="White" BackgroundColor="Green" FontSize="15" IsVisible="false"/>
+        <Button x:Name="Help" Text="Help"  Margin="200,0" HeightRequest="50" TextColor="White" BackgroundColor="Green" FontSize="15" IsVisible="false"/>
+        <Button x:Name="Info" Text="Info"  Margin="200,0" HeightRequest="50" BackgroundColor="Green" FontSize="15" TextColor="White" IsVisible="false"/>
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+
+            <Button x:Name="hit" Clicked="hit_Clicked" WidthRequest="50" Text="Hit" BackgroundColor="White" VerticalOptions="Center" FontSize="15" TextColor="Black" IsVisible="false"/>
+            <Button x:Name="stand" Clicked="stand_Clicked" WidthRequest="60" Text="Stand" BackgroundColor="White" VerticalOptions="Center" FontSize="15" TextColor="Black" IsVisible="false"/>
+            <Label Margin="100,0"/>
+                <Label x:Name="lbl1or11" Text="1 or 11 for A" FontSize="15"  TextColor="White"/>
+            <Button x:Name="one" Clicked="one_Clicked" WidthRequest="60" Text="1" BackgroundColor="White" VerticalOptions="Center" FontSize="15" TextColor="Black" IsVisible="false"/>
+            <Button x:Name="eleven" Clicked="eleven_Clicked" WidthRequest="60" Text="11" BackgroundColor="White" VerticalOptions="Center" FontSize="15" TextColor="Black" IsVisible="false"/>
+
+        </StackLayout>
+
+        
+        <Label x:Name="label" Text="Dealer" VerticalOptions="Start" FontSize="30" HorizontalOptions="Center"/>
+
+        <!--<Image Source="{helpers:ImageResource Bingo_Casino.Assets.Images.cards.imageonline-co-split-image (1).png }" HeightRequest="300" WidthRequest="300" />-->
+        <Grid x:Name="grid">
+                        
+        </Grid>
+        
+        
+        
+        
+    </StackLayout>
+
+</ContentPage>

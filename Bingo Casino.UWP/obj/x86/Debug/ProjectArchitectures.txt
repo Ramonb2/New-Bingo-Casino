@@ -1,0 +1,1 @@
+D:\C#\freelance2\Bingo Casino.UWP\Bingo Casino.UWP.csproj;x86
