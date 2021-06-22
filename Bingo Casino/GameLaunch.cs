@@ -453,7 +453,7 @@ namespace Bingo_Casino
 
             var assembly = typeof(MainPage);
             string fileName = "";
-            string NameOfImage = "imageonline-co-split-image (" + ((int)r - 1) + ").png"; Console.WriteLine("rami"); Console.WriteLine("rami"); Console.WriteLine("rami"); Console.WriteLine("rami"); Console.WriteLine("rami"); Console.WriteLine("rami"); Console.WriteLine("rami"); Console.WriteLine("rami"); Console.WriteLine("rami"); Console.WriteLine("rami"); Console.WriteLine("rami"); Console.WriteLine("rami"); Console.WriteLine("rami"); Console.WriteLine("rami"); Console.WriteLine("rami"); Console.WriteLine("rami");
+            string NameOfImage = "imageonline-co-split-image (" + ((int)r - 1) + ").png";
 
 
             switch ((int)s)
