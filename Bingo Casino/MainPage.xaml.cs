@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Xml.Linq;
 using Xamarin.Forms;
+using System.Windows;
 using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
 
@@ -28,9 +30,11 @@ namespace Bingo_Casino
 
         }
         //this add image
-        
+
 
         //Homepage
+
+
         private void BlackJack_Clicked(object sender, EventArgs e)
         {
             Back.IsVisible = true;
@@ -84,6 +88,19 @@ namespace Bingo_Casino
 
 
 
+        }
+
+        private void info_Clicked(object sender, EventArgs e)
+        {
+            DisplayAlert("Info", "What do you want to know", "OK");
+        }
+        private void help_Clicked(object sender, EventArgs e)
+        {
+            DisplayAlert("Help", "Help me plz !!!", "OK");
+        }
+        private void token_Clicked(object sender, EventArgs e)
+        {
+            DisplayAlert("Buy Tokens", "https://paypal.me/NerusDev?", "OK");
         }
 
         private void Back_Clicked(object sender, EventArgs e)
@@ -141,11 +158,34 @@ namespace Bingo_Casino
 
         }
 
-        private void stand_Clicked(object sender, EventArgs e)
+        private async void stand_Clicked(object sender, EventArgs e)
         {
-            blackJackGame.dealer.Add(stackL, grid);
-            blackJackGame.CheckIfSomeoneWinForStep(stackL,grid);
-            S.sound("zapsplat_leisure_playing_cards_dealing_table_001_20483 (mp3cut.net) (2).mp3");
+            while (blackJackGame.dealer.get_cardRank() < 17)
+            {
+                blackJackGame.dealer.Add(stackL, grid);
+                if (blackJackGame.player.cardsRank < blackJackGame.dealer.get_cardRank() && blackJackGame.dealer.get_cardRank() <= 21)
+                {
+                    blackJackGame.GameOver(stackL, grid, true);
+                    return;
+
+                }
+
+                S.sound("zapsplat_leisure_playing_cards_dealing_table_001_20483 (mp3cut.net) (2).mp3");
+                await Task.Delay(1000);
+
+            }
+            if (blackJackGame.player.cardsRank < blackJackGame.dealer.get_cardRank() && blackJackGame.dealer.get_cardRank() == 17)
+            {
+                blackJackGame.GameOver(stackL, grid, true);
+                return;
+
+            }
+            else
+            {
+                blackJackGame.CheckIfSomeoneWinForStep(stackL, grid);
+                return;
+            }
+
         }
 
         private void one_Clicked(object sender, EventArgs e)
@@ -162,7 +202,7 @@ namespace Bingo_Casino
             blackJackGame.player.HowMuchForA = 11;
         }
 
-        
+
 
         public void Start()
         {

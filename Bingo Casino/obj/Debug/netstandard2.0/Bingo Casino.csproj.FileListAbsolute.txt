@@ -54,3 +54,17 @@ D:\C#\freelance2\Bingo Casino\obj\Debug\netstandard2.0\Bingo Casino.dll
 D:\C#\freelance2\Bingo Casino\obj\Debug\netstandard2.0\ref\Bingo Casino.dll
 D:\C#\freelance2\Bingo Casino\obj\Debug\netstandard2.0\Bingo Casino.pdb
 D:\C#\freelance2\Bingo Casino\obj\Debug\netstandard2.0\Bingo Casino.csproj.AssemblyReference.cache
+D:\minor\New-Bingo-Casino\Bingo Casino\bin\Debug\netstandard2.0\Bingo Casino.deps.json
+D:\minor\New-Bingo-Casino\Bingo Casino\bin\Debug\netstandard2.0\Bingo Casino.dll
+D:\minor\New-Bingo-Casino\Bingo Casino\bin\Debug\netstandard2.0\ref\Bingo Casino.dll
+D:\minor\New-Bingo-Casino\Bingo Casino\bin\Debug\netstandard2.0\Bingo Casino.pdb
+D:\minor\New-Bingo-Casino\Bingo Casino\obj\Debug\netstandard2.0\Bingo Casino.csproj.AssemblyReference.cache
+D:\minor\New-Bingo-Casino\Bingo Casino\obj\Debug\netstandard2.0\App.xaml.g.cs
+D:\minor\New-Bingo-Casino\Bingo Casino\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+D:\minor\New-Bingo-Casino\Bingo Casino\obj\Debug\netstandard2.0\Bingo Casino.AssemblyInfoInputs.cache
+D:\minor\New-Bingo-Casino\Bingo Casino\obj\Debug\netstandard2.0\Bingo Casino.AssemblyInfo.cs
+D:\minor\New-Bingo-Casino\Bingo Casino\obj\Debug\netstandard2.0\Bingo Casino.csproj.CoreCompileInputs.cache
+D:\minor\New-Bingo-Casino\Bingo Casino\obj\Debug\netstandard2.0\XamlC.stamp
+D:\minor\New-Bingo-Casino\Bingo Casino\obj\Debug\netstandard2.0\Bingo Casino.dll
+D:\minor\New-Bingo-Casino\Bingo Casino\obj\Debug\netstandard2.0\ref\Bingo Casino.dll
+D:\minor\New-Bingo-Casino\Bingo Casino\obj\Debug\netstandard2.0\Bingo Casino.pdb

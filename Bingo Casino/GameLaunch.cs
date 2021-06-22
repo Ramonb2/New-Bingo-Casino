@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
+
 namespace Bingo_Casino
 {
     class GameLaunch
@@ -13,7 +14,6 @@ namespace Bingo_Casino
 
     }
 
-    //prvni patro
 
     class BlackJackGame
     {
@@ -30,7 +30,7 @@ namespace Bingo_Casino
 
             if (winDealer == true)
             {
-                l.Text = "Game over";
+                l.Text = "The dealer has won Game over";
                 l.TextColor = Color.Red;
                 stack.Children.Add(l);
             }
@@ -42,7 +42,7 @@ namespace Bingo_Casino
             }
 
             //enabeld all elements
-            foreach(var v in stack.Children)
+            foreach (var v in stack.Children)
             {
                 if (v != l)
                 {
@@ -80,15 +80,15 @@ namespace Bingo_Casino
             }
 
             //if they have same value
-            if(dealer.cardsRank == player.cardsRank)
+            if (dealer.cardsRank == player.cardsRank)
             {
                 GameOver(stack, grid, true);
                 return;
             }
 
-            if (dealer.cardsRank > 17)
+            if (dealer.cardsRank >= 17)
             {
-                
+
                 if (dealer.cardsRank >= player.cardsRank)
                 {
                     if (dealer.cardsRank <= 21)
@@ -154,13 +154,13 @@ namespace Bingo_Casino
                 return;
             }
         }
-        
+
     }
 
-   
 
-    
-    
+
+
+
 
     class PockerGame
     {
@@ -214,10 +214,11 @@ namespace Bingo_Casino
 
 
 
+
     }
 
 
-    //druhy patro
+
 
     class User
     {
@@ -240,7 +241,7 @@ namespace Bingo_Casino
 
     class Dealer : Hand
     {
-        
+
         public void Add(StackLayout stack, Grid grid)
         {
             AddOneCard(deck.deal(), stack, grid, true);
@@ -251,6 +252,11 @@ namespace Bingo_Casino
             hand.Clear();
             cardsRank = 0;
         }
+        public int get_cardRank()
+        {
+            return cardsRank;
+        }
+
     }
 
     class Deck
@@ -329,15 +335,16 @@ namespace Bingo_Casino
             foreach (Card c in cards)
             {
 
-                int random = nh.Next(0,MaxDeckSize);
+                int random = nh.Next(0, MaxDeckSize);
 
-                while(true)
+                while (true)
                 {
                     if (cards1[random] == null)
                     {
                         cards1[random] = c;
                         break;
-                    }else
+                    }
+                    else
                     {
                         random = nh.Next(0, MaxDeckSize);
                     }
@@ -356,7 +363,7 @@ namespace Bingo_Casino
         public Card deal()
         {
             Card firstCard;
-            if(cards.Count == 0)
+            if (cards.Count == 0)
             {
                 cards = usedCards;
                 usedCards.Clear();
@@ -378,7 +385,7 @@ namespace Bingo_Casino
     }
 
 
-    //treti patro
+ 
 
     class Card
     {
@@ -386,7 +393,7 @@ namespace Bingo_Casino
         string avatar;
         public Rank rank = new Rank();
 
-        public Card(Suit s,Rank r)
+        public Card(Suit s, Rank r)
         {
             suit = s;
             rank = r;
@@ -413,9 +420,13 @@ namespace Bingo_Casino
 
         public int MaxHandSize = 2;
 
+        public int get_cardRank()
+        {
+            return cardsRank;
+        }
         public void AddOneCard(Card card, StackLayout stack, Grid grid, bool dealer)
         {
-            if(dealer == true && cardsRank > 17)
+            if (dealer == true && cardsRank > 17)
             {
                 return;
             }
@@ -429,7 +440,7 @@ namespace Bingo_Casino
                 cardsRank = cardsRank + (int)card.rank;
             }
 
-            
+
 
             hand.Add(card);
 
@@ -442,7 +453,8 @@ namespace Bingo_Casino
 
             var assembly = typeof(MainPage);
             string fileName = "";
-            string NameOfImage = "imageonline-co-split-image (" + ((int)r - 1) + ").png";
+            string NameOfImage = "imageonline-co-split-image (" + ((int)r - 1) + ").png"; Console.WriteLine("rami"); Console.WriteLine("rami"); Console.WriteLine("rami"); Console.WriteLine("rami"); Console.WriteLine("rami"); Console.WriteLine("rami"); Console.WriteLine("rami"); Console.WriteLine("rami"); Console.WriteLine("rami"); Console.WriteLine("rami"); Console.WriteLine("rami"); Console.WriteLine("rami"); Console.WriteLine("rami"); Console.WriteLine("rami"); Console.WriteLine("rami"); Console.WriteLine("rami");
+
 
             switch ((int)s)
             {
@@ -473,14 +485,14 @@ namespace Bingo_Casino
 
             if (dealer == false)
             {
-                if(hand.Count <= 2)
+                if (hand.Count <= 2)
                 {
                     translateX = -(int)(stack.Height * 0.15) * hand.Count;
                     translateY = stack.Height / 6 * 3;
                 }
                 else
                 {
-                    if(hand.Count < 7)
+                    if (hand.Count < 7)
                     {
                         translateX = (int)(stack.Height * 0.15) * (hand.Count - 3);
                         translateY = stack.Height / 6 * 3;
@@ -519,10 +531,10 @@ namespace Bingo_Casino
                 //m.TranslateTo(-stack.Width / 5, 0);
             }
 
-            
+
             m.TranslateTo(translateX, translateY);
 
-           grid.Children.Add(m);
+            grid.Children.Add(m);
         }
 
         public void Sort()
@@ -566,27 +578,27 @@ namespace Bingo_Casino
                 hand.Add(c);
             }
         }
-        
+
         public int totalValueOfTheHand
         {
             get { return hand.Count; }
         }
-        
+
 
     }
 
     class BlackJackPlayer : Hand
     {
-       
+
 
         public void Add(StackLayout stack, Grid grid)
         {
-            AddOneCard(deck.deal(),stack,grid, false);
+            AddOneCard(deck.deal(), stack, grid, false);
         }
 
         public void doubleDown()
         {
-            
+
         }
 
         public void RemoveAll()
@@ -596,9 +608,9 @@ namespace Bingo_Casino
         }
     }
 
-        
 
-    //ctvrty patro
+
+
 
     public enum Rank
     {

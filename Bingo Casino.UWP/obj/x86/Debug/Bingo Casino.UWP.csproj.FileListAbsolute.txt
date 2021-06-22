@@ -294,3 +294,80 @@ D:\C#\freelance2\Bingo Casino.UWP\obj\x86\Debug\.winmd_cache\$Microsoft.Graphics
 D:\C#\freelance2\Bingo Casino.UWP\obj\x86\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_636758480200000000.json
 D:\C#\freelance2\Bingo Casino.UWP\obj\x86\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_637424743200000000.json
 D:\C#\freelance2\Bingo Casino.UWP\obj\x86\Debug\Bingo Casino.UWP.csproj.AssemblyReference.cache
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\App.xbf
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\MainPage.xbf
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\Bingo Casino.UWP.xr.xml
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\Bingo Casino.UWP.exe
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\Bingo Casino.UWP.pdb
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\resources.pri
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\AppxManifest.xml
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\Core\AppxManifest.xml
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\Core\Bingo Casino.UWP.exe
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\Bingo Casino.UWP.build.appxrecipe
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\Plugin.AudioRecorder.dll
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\Plugin.AudioRecorder.pdb
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\MediaManager.dll
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\MediaManager.pdb
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\MediaManager.Forms.dll
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\MediaManager.Forms.pdb
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\System.Runtime.dll
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\Microsoft.Graphics.Canvas.dll
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\Microsoft.Graphics.Canvas.winmd
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\AxInterop.WMPLib.dll
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\Interop.WMPLib.dll
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\Plugin.SimpleAudioPlayer.Abstractions.dll
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\Plugin.SimpleAudioPlayer.Abstractions.pdb
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\Plugin.SimpleAudioPlayer.dll
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\Plugin.SimpleAudioPlayer.pdb
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\Xamarin.Essentials.dll
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\Xamarin.Essentials.pdb
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\Xamarin.Forms.Core.dll
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\Xamarin.Forms.Core.pdb
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\Xamarin.Forms.Platform.UAP.dll
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\Xamarin.Forms.Platform.UAP.pdb
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\Xamarin.Forms.Platform.dll
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\Xamarin.Forms.Xaml.dll
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\Xamarin.Forms.Xaml.pdb
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\Bingo Casino.dll
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\Microsoft.UI.Xaml.Markup.winmd
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\Bingo Casino.pdb
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\Bingo Casino.UWP.csproj.AssemblyReference.cache
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\App.g.i.cs
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\App.g.cs
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\MainPage.g.i.cs
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\MainPage.g.cs
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\XamlTypeInfo.g.cs
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\App.xaml
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\MainPage.xaml
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\App.xbf
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\MainPage.xbf
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\XamlSaveStateFile.xml
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\Bingo Casino.UWP.csproj.CoreCompileInputs.cache
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\Bingo Casino.UWP.csproj.CopyComplete
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\Microsoft.UI.Xaml.pri.xml
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\Plugin.SimpleAudioPlayer.pri.xml
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\Xamarin.Essentials.pri.xml
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\Xamarin.Forms.Platform.UAP.pri.xml
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\Bingo Casino.UWP.exe
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\Bingo Casino.UWP.pdb
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\ResourceHandlingTask.state
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\priconfig.xml
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\priconfig.xml.intermediate
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\unfiltered.layout.resfiles
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\unfiltered.layout.resfiles.intermediate
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\filtered.layout.resfiles
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\filtered.layout.resfiles.intermediate
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\excluded.layout.resfiles
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\excluded.layout.resfiles.intermediate
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\resources.resfiles
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\resources.resfiles.intermediate
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\pri.resfiles
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\pri.resfiles.intermediate
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\qualifiers.txt
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\qualifiers.txt.intermediate
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\ProjectArchitectures.txt
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\.winmd_cache\$Microsoft.Graphics.Canvas.winmd_636160679180000000.json
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_636758480200000000.json
+D:\minor\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_637424743200000000.json

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "p32A285yL885QPmgsYSM1FBcCN4xw66LVTfT0fzcop4Ay8/2zixKT1Mdx+Pk+THBv3XbDtSyWU6I5fANui7/yQ==",
+  "dgSpecHash": "VkmjnAOgCwPoc84iuer/n4jxEy/X1+kOFklwr5oEmc5ITwQcN3zKPtmBX8h+S/JNEcT+r84RO+ltBWnlMpUArA==",
   "success": true,
-  "projectFilePath": "D:\\C#\\freelance2\\Bingo Casino.UWP\\Bingo Casino.UWP.csproj",
+  "projectFilePath": "D:\\minor\\New-Bingo-Casino\\Bingo Casino.UWP\\Bingo Casino.UWP.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\R_Maz\\.nuget\\packages\\microsoft.net.native.compiler\\2.2.10-rel-29722-00\\microsoft.net.native.compiler.2.2.10-rel-29722-00.nupkg.sha512",
     "C:\\Users\\R_Maz\\.nuget\\packages\\microsoft.net.uwpcoreruntimesdk\\2.2.12\\microsoft.net.uwpcoreruntimesdk.2.2.12.nupkg.sha512",

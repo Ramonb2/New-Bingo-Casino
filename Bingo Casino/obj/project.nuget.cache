@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FPMU+7YZ0s7QxpZuCW1rKl9EHVWFvFH9lmNO9pHpoDtUX9uiyvvqp9fe3/QuH3++UxOwuADWN6i9ZJw2dVqQGg==",
+  "dgSpecHash": "MxMU/szpOG7jM4beigNdJtPtVruybY+L0n7gvmlZzjExrZWUWD+LWqHporVKbOmQYyYQFvHceYJqwsxm/A5Ehg==",
   "success": true,
-  "projectFilePath": "D:\\C#\\freelance2\\Bingo Casino\\Bingo Casino.csproj",
+  "projectFilePath": "D:\\minor\\New-Bingo-Casino\\Bingo Casino\\Bingo Casino.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\R_Maz\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
