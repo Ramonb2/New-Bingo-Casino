@@ -30,13 +30,13 @@
     <AppXManifest Include="D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-06-22T13:44:16.222</Modified>
+      <Modified>2021-06-24T08:09:25.586</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\Bingo Casino.UWP.exe">
       <PackagePath>entrypoint\Bingo Casino.UWP.exe</PackagePath>
-      <Modified>2021-06-22T13:44:13.870</Modified>
+      <Modified>2021-06-24T08:09:24.687</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\R_Maz\.nuget\packages\plugin.audiorecorder\1.1.0\lib\netcore50\Plugin.AudioRecorder.dll">
       <PackagePath>Plugin.AudioRecorder.dll</PackagePath>
@@ -96,7 +96,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\minor\New-Bingo-Casino\Bingo Casino\bin\Debug\netstandard2.0\Bingo Casino.dll">
       <PackagePath>Bingo Casino.dll</PackagePath>
-      <Modified>2021-06-22T13:44:02.429</Modified>
+      <Modified>2021-06-24T08:09:18.756</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\R_Maz\.nuget\packages\win2d.uwp\1.20.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
@@ -113,153 +113,153 @@
     <AppxPackagedFile Include="D:\minor\New-Bingo-Casino\Bingo Casino.UWP\Assets\LargeTile.scale-100.png">
       <PackagePath>Assets\LargeTile.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-06-04T05:27:15.629</Modified>
+      <Modified>2021-06-24T07:32:56.776</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\minor\New-Bingo-Casino\Bingo Casino.UWP\Assets\LargeTile.scale-200.png">
       <PackagePath>Assets\LargeTile.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-06-04T05:27:15.631</Modified>
+      <Modified>2021-06-24T07:32:56.787</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\minor\New-Bingo-Casino\Bingo Casino.UWP\Assets\LargeTile.scale-400.png">
       <PackagePath>Assets\LargeTile.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-06-04T05:27:15.634</Modified>
+      <Modified>2021-06-24T07:32:56.802</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\minor\New-Bingo-Casino\Bingo Casino.UWP\Assets\SmallTile.scale-100.png">
       <PackagePath>Assets\SmallTile.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-06-04T05:27:15.635</Modified>
+      <Modified>2021-06-24T07:32:56.815</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\minor\New-Bingo-Casino\Bingo Casino.UWP\Assets\SmallTile.scale-200.png">
       <PackagePath>Assets\SmallTile.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-06-04T05:27:15.699</Modified>
+      <Modified>2021-06-24T07:32:56.827</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\minor\New-Bingo-Casino\Bingo Casino.UWP\Assets\SmallTile.scale-400.png">
       <PackagePath>Assets\SmallTile.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-06-04T05:27:15.700</Modified>
+      <Modified>2021-06-24T07:32:56.839</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\minor\New-Bingo-Casino\Bingo Casino.UWP\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-06-04T05:27:15.704</Modified>
+      <Modified>2021-06-24T07:32:56.867</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\minor\New-Bingo-Casino\Bingo Casino.UWP\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-06-04T05:27:15.706</Modified>
+      <Modified>2021-06-24T07:32:56.883</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\minor\New-Bingo-Casino\Bingo Casino.UWP\Assets\SplashScreen.scale-400.png">
       <PackagePath>Assets\SplashScreen.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-06-04T05:27:15.709</Modified>
+      <Modified>2021-06-24T07:32:56.901</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\minor\New-Bingo-Casino\Bingo Casino.UWP\Assets\Square150x150Logo.scale-100.png">
       <PackagePath>Assets\Square150x150Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-06-04T05:27:15.768</Modified>
+      <Modified>2021-06-24T07:32:56.920</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\minor\New-Bingo-Casino\Bingo Casino.UWP\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-06-04T05:27:15.771</Modified>
+      <Modified>2021-06-24T07:32:57.002</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\minor\New-Bingo-Casino\Bingo Casino.UWP\Assets\Square150x150Logo.scale-400.png">
       <PackagePath>Assets\Square150x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-06-04T05:27:15.773</Modified>
+      <Modified>2021-06-24T07:32:57.018</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\minor\New-Bingo-Casino\Bingo Casino.UWP\Assets\Square44x44Logo.altform-unplated_targetsize-16.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-06-04T05:27:15.774</Modified>
+      <Modified>2021-06-24T07:32:57.030</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\minor\New-Bingo-Casino\Bingo Casino.UWP\Assets\Square44x44Logo.altform-unplated_targetsize-256.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-06-04T05:27:15.776</Modified>
+      <Modified>2021-06-24T07:32:57.043</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\minor\New-Bingo-Casino\Bingo Casino.UWP\Assets\Square44x44Logo.altform-unplated_targetsize-48.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-06-04T05:27:15.837</Modified>
+      <Modified>2021-06-24T07:32:57.050</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\minor\New-Bingo-Casino\Bingo Casino.UWP\Assets\Square44x44Logo.scale-100.png">
       <PackagePath>Assets\Square44x44Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-06-04T05:27:15.840</Modified>
+      <Modified>2021-06-24T07:32:57.061</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\minor\New-Bingo-Casino\Bingo Casino.UWP\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-06-04T05:27:15.841</Modified>
+      <Modified>2021-06-24T07:32:57.071</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\minor\New-Bingo-Casino\Bingo Casino.UWP\Assets\Square44x44Logo.scale-400.png">
       <PackagePath>Assets\Square44x44Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-06-04T05:27:15.843</Modified>
+      <Modified>2021-06-24T07:32:57.082</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\minor\New-Bingo-Casino\Bingo Casino.UWP\Assets\Square44x44Logo.targetsize-16.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-06-04T05:27:15.844</Modified>
+      <Modified>2021-06-24T07:32:57.082</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\minor\New-Bingo-Casino\Bingo Casino.UWP\Assets\Square44x44Logo.targetsize-256.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-06-04T05:27:15.904</Modified>
+      <Modified>2021-06-24T07:32:57.083</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\minor\New-Bingo-Casino\Bingo Casino.UWP\Assets\Square44x44Logo.targetsize-48.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-06-04T05:27:15.905</Modified>
+      <Modified>2021-06-24T07:32:57.084</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\minor\New-Bingo-Casino\Bingo Casino.UWP\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-06-04T05:27:15.908</Modified>
+      <Modified>2021-06-24T07:32:57.108</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\minor\New-Bingo-Casino\Bingo Casino.UWP\Assets\StoreLogo.scale-200.png">
       <PackagePath>Assets\StoreLogo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-06-04T05:27:15.910</Modified>
+      <Modified>2021-06-24T07:32:57.157</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\minor\New-Bingo-Casino\Bingo Casino.UWP\Assets\StoreLogo.scale-400.png">
       <PackagePath>Assets\StoreLogo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-06-04T05:27:15.970</Modified>
+      <Modified>2021-06-24T07:32:57.209</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\minor\New-Bingo-Casino\Bingo Casino.UWP\Assets\Wide310x150Logo.scale-100.png">
       <PackagePath>Assets\Wide310x150Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-06-04T05:27:15.972</Modified>
+      <Modified>2021-06-24T07:32:57.276</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\minor\New-Bingo-Casino\Bingo Casino.UWP\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-06-04T05:27:15.974</Modified>
+      <Modified>2021-06-24T07:32:57.276</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\minor\New-Bingo-Casino\Bingo Casino.UWP\Assets\Wide310x150Logo.scale-400.png">
       <PackagePath>Assets\Wide310x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-06-04T05:27:15.976</Modified>
+      <Modified>2021-06-24T07:32:57.277</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\minor\New-Bingo-Casino\Bingo Casino.UWP\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2021-06-04T05:27:16.038</Modified>
+      <Modified>2021-06-24T07:32:57.515</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\Bingo Casino.UWP.xr.xml">
       <PackagePath>Bingo Casino.UWP.xr.xml</PackagePath>
-      <Modified>2021-06-04T05:28:18.469</Modified>
+      <Modified>2021-06-24T07:33:01.387</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2021-06-22T13:44:13.731</Modified>
+      <Modified>2021-06-24T08:09:24.622</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2021-06-22T13:44:13.731</Modified>
+      <Modified>2021-06-24T08:09:24.622</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.17763.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -275,11 +275,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2021-06-22T13:44:14.707</Modified>
+      <Modified>2021-06-24T07:41:42.356</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\Core\Bingo Casino.UWP.exe">
       <PackagePath>Bingo Casino.UWP.exe</PackagePath>
-      <Modified>2021-06-22T13:44:16.202</Modified>
+      <Modified>2021-06-24T08:09:25.582</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
