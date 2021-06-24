@@ -30,13 +30,13 @@
     <AppXManifest Include="D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-06-24T08:09:25.586</Modified>
+      <Modified>2021-06-24T08:14:32.751</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\Bingo Casino.UWP.exe">
       <PackagePath>entrypoint\Bingo Casino.UWP.exe</PackagePath>
-      <Modified>2021-06-24T08:09:24.687</Modified>
+      <Modified>2021-06-24T08:14:31.708</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\R_Maz\.nuget\packages\plugin.audiorecorder\1.1.0\lib\netcore50\Plugin.AudioRecorder.dll">
       <PackagePath>Plugin.AudioRecorder.dll</PackagePath>
@@ -96,7 +96,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\minor\New-Bingo-Casino\Bingo Casino\bin\Debug\netstandard2.0\Bingo Casino.dll">
       <PackagePath>Bingo Casino.dll</PackagePath>
-      <Modified>2021-06-24T08:09:18.756</Modified>
+      <Modified>2021-06-24T08:14:25.479</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\R_Maz\.nuget\packages\win2d.uwp\1.20.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
@@ -255,11 +255,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2021-06-24T08:09:24.622</Modified>
+      <Modified>2021-06-24T08:14:31.599</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2021-06-24T08:09:24.622</Modified>
+      <Modified>2021-06-24T08:14:31.599</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.17763.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -279,7 +279,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\minor\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\Core\Bingo Casino.UWP.exe">
       <PackagePath>Bingo Casino.UWP.exe</PackagePath>
-      <Modified>2021-06-24T08:09:25.582</Modified>
+      <Modified>2021-06-24T08:14:32.745</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

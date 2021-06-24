@@ -11,25 +11,13 @@ namespace Bingo_Casino
 {
     public partial class MainPage : ContentPage
     {
-        Setting S = new Setting();
-        BlackJackGame blackJackGame = new BlackJackGame();
-
+        GameLaunch gameLaunch = new GameLaunch();
 
         public MainPage()
         {
             InitializeComponent();
-            //SetupImageonthisPage("setting.png");
-            //Back.IsVisible = false;
-            //Image assignImageFromSource = new Image
-            //{
-            //    Source = "avatar.png",
-            //    Aspect = Aspect.AspectFit,
-            //    HeightRequest = 50,
-            //    WidthRequest = 60
-            //};
 
         }
-        //this add image
 
 
         //Homepage
@@ -48,12 +36,8 @@ namespace Bingo_Casino
             eleven.IsEnabled = false;
             one.IsEnabled = true;
             lbl1or11.IsVisible = true;
-            blackJackGame.player.HowMuchForA = 11;
-
-            //make cards to blackjack
-
-            //blackJackGame.Start(stackL, grid);
-            //S.sound("zapsplat_leisure_playing_cards_dealing_table_001_20483 (mp3cut.net) (2).mp3",1000);
+            gameLaunch.blackJackGame.player.HowMuchForA = 11;
+            // start the game
             Start();
 
 
@@ -126,8 +110,8 @@ namespace Bingo_Casino
 
             grid.Children.Clear();
 
-            blackJackGame.player.RemoveAll();
-            blackJackGame.dealer.RemoveAll();
+            gameLaunch.blackJackGame.player.RemoveAll();
+            gameLaunch.blackJackGame.dealer.RemoveAll();
 
         }
 
@@ -139,50 +123,50 @@ namespace Bingo_Casino
             if (Sound.Text == "Sound On")
             {
                 Sound.Text = "Sound Off";
-                S.mute(true);
+                gameLaunch.setting.mute(true);
             }
             else
             {
                 Sound.Text = "Sound On";
-                S.mute(false);
+                gameLaunch.setting.mute(false);
             }
         }
 
 
         private void hit_Clicked(object sender, EventArgs e)
         {
-            blackJackGame.player.Add(stackL, grid);
-            blackJackGame.dealer.Add(stackL, grid);
-            blackJackGame.CheckIfSomeoneWinForHit(stackL, grid);
-            S.sound("zapsplat_leisure_playing_cards_dealing_table_001_20483 (mp3cut.net) (2).mp3");
+            gameLaunch.blackJackGame.player.Add(stackL, grid);
+            gameLaunch.blackJackGame.dealer.Add(stackL, grid);
+            gameLaunch.blackJackGame.CheckIfSomeoneWinForHit(stackL, grid);
+            gameLaunch.setting.sound("zapsplat_leisure_playing_cards_dealing_table_001_20483 (mp3cut.net) (2).mp3");
 
         }
 
         private async void stand_Clicked(object sender, EventArgs e)
         {
-            while (blackJackGame.dealer.get_cardRank() < 17)
+            while (gameLaunch.blackJackGame.dealer.get_cardRank() < 17)
             {
-                blackJackGame.dealer.Add(stackL, grid);
-                if (blackJackGame.player.cardsRank < blackJackGame.dealer.get_cardRank() && blackJackGame.dealer.get_cardRank() <= 21)
+                gameLaunch.blackJackGame.dealer.Add(stackL, grid);
+                if (gameLaunch.blackJackGame.player.cardsRank < gameLaunch.blackJackGame.dealer.get_cardRank() && gameLaunch.blackJackGame.dealer.get_cardRank() <= 21)
                 {
-                    blackJackGame.GameOver(stackL, grid, true);
+                    gameLaunch.blackJackGame.GameOver(stackL, grid, true);
                     return;
 
                 }
 
-                S.sound("zapsplat_leisure_playing_cards_dealing_table_001_20483 (mp3cut.net) (2).mp3");
+                gameLaunch.setting.sound("zapsplat_leisure_playing_cards_dealing_table_001_20483 (mp3cut.net) (2).mp3");
                 await Task.Delay(1000);
 
             }
-            if (blackJackGame.player.cardsRank < blackJackGame.dealer.get_cardRank() && blackJackGame.dealer.get_cardRank() == 17)
+            if (gameLaunch.blackJackGame.player.cardsRank < gameLaunch.blackJackGame.dealer.get_cardRank() && gameLaunch.blackJackGame.dealer.get_cardRank() == 17)
             {
-                blackJackGame.GameOver(stackL, grid, true);
+                gameLaunch.blackJackGame.GameOver(stackL, grid, true);
                 return;
 
             }
             else
             {
-                blackJackGame.CheckIfSomeoneWinForStep(stackL, grid);
+                gameLaunch.blackJackGame.CheckIfSomeoneWinForStep(stackL, grid);
                 return;
             }
 
@@ -190,7 +174,7 @@ namespace Bingo_Casino
 
         private void one_Clicked(object sender, EventArgs e)
         {
-            blackJackGame.player.HowMuchForA = 1;
+            gameLaunch.blackJackGame.player.HowMuchForA = 1;
             one.IsEnabled = false;
             eleven.IsEnabled = true;
         }
@@ -199,16 +183,16 @@ namespace Bingo_Casino
         {
             one.IsEnabled = true;
             eleven.IsEnabled = false;
-            blackJackGame.player.HowMuchForA = 11;
+            gameLaunch.blackJackGame.player.HowMuchForA = 11;
         }
 
 
 
         public void Start()
         {
-            blackJackGame.dealer.Add(stackL, grid);
-            blackJackGame.player.Add(stackL, grid);
-            blackJackGame.player.Add(stackL, grid);
+            gameLaunch.blackJackGame.dealer.Add(stackL, grid);
+            gameLaunch.blackJackGame.player.Add(stackL, grid);
+            gameLaunch.blackJackGame.player.Add(stackL, grid);
         }
     }
 
