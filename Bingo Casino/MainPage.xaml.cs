@@ -137,7 +137,7 @@ namespace Bingo_Casino
         {
             gameLaunch.blackJackGame.player.Add(stackL, grid);
             gameLaunch.blackJackGame.dealer.Add(stackL, grid);
-            gameLaunch.blackJackGame.CheckIfSomeoneWinForHit(stackL, grid);
+            gameLaunch.blackJackGame.CheckIfSomeoneWinForHit(stackL, grid, Math.Abs(int.Parse(HowMuch.Text)), lblUserTokens);
             gameLaunch.setting.sound("zapsplat_leisure_playing_cards_dealing_table_001_20483 (mp3cut.net) (2).mp3");
 
         }
@@ -149,7 +149,7 @@ namespace Bingo_Casino
                 gameLaunch.blackJackGame.dealer.Add(stackL, grid);
                 if (gameLaunch.blackJackGame.player.cardsRank < gameLaunch.blackJackGame.dealer.get_cardRank() && gameLaunch.blackJackGame.dealer.get_cardRank() <= 21)
                 {
-                    gameLaunch.blackJackGame.GameOver(stackL, grid, true);
+                    gameLaunch.blackJackGame.GameOver(stackL, grid, Math.Abs(int.Parse(HowMuch.Text)),  true, lblUserTokens);
                     return;
 
                 }
@@ -160,13 +160,13 @@ namespace Bingo_Casino
             }
             if (gameLaunch.blackJackGame.player.cardsRank < gameLaunch.blackJackGame.dealer.get_cardRank() && gameLaunch.blackJackGame.dealer.get_cardRank() == 17)
             {
-                gameLaunch.blackJackGame.GameOver(stackL, grid, true);
+                gameLaunch.blackJackGame.GameOver(stackL, grid, Math.Abs(int.Parse(HowMuch.Text)), true, lblUserTokens);
                 return;
 
             }
             else
             {
-                gameLaunch.blackJackGame.CheckIfSomeoneWinForStep(stackL, grid);
+                gameLaunch.blackJackGame.CheckIfSomeoneWinForStep(stackL, grid, Math.Abs(int.Parse(HowMuch.Text)), lblUserTokens);
                 return;
             }
 

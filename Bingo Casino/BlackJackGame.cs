@@ -10,7 +10,8 @@ namespace Bingo_Casino
     {
         public BlackJackPlayer player = new BlackJackPlayer();
         public Dealer dealer = new Dealer();
-        public async void GameOver(StackLayout stack, Grid grid, bool winDealer)
+        public User user = new User();
+        public async void GameOver(StackLayout stack, Grid grid,int bet, bool winDealer, Label label)
         {
             //grid.Children.Clear();
 
@@ -23,6 +24,7 @@ namespace Bingo_Casino
             {
                 l.Text = "The dealer has won Game over";
                 l.TextColor = Color.Red;
+                user.AddMoney = user.AddMoney - bet;
                 stack.Children.Add(l);
             }
             else
@@ -61,19 +63,19 @@ namespace Bingo_Casino
             }
         }
 
-        public void CheckIfSomeoneWinForStep(StackLayout stack, Grid grid)
+        public void CheckIfSomeoneWinForStep(StackLayout stack, Grid grid, int bet, Label label)
         {
             //if they crosed
             if (dealer.cardsRank > 21 && player.cardsRank > 21)
             {
-                GameOver(stack, grid, true);
+                GameOver(stack, grid, bet, true, label);
                 return;
             }
 
             //if they have same value
             if (dealer.cardsRank == player.cardsRank)
             {
-                GameOver(stack, grid, true);
+                GameOver(stack, grid, bet, true, label);
                 return;
             }
 
@@ -84,22 +86,22 @@ namespace Bingo_Casino
                 {
                     if (dealer.cardsRank <= 21)
                     {
-                        GameOver(stack, grid, true);
+                        GameOver(stack, grid, bet, true, label);
                     }
                     else
                     {
-                        GameOver(stack, grid, false);
+                        GameOver(stack, grid, bet, false, label);
                     }
                 }
                 else
                 {
                     if (player.cardsRank < 21)
                     {
-                        GameOver(stack, grid, false);
+                        GameOver(stack, grid, bet, false, label);
                     }
                     else
                     {
-                        GameOver(stack, grid, true);
+                        GameOver(stack, grid, bet, true, label);
                     }
 
                 }
@@ -108,40 +110,40 @@ namespace Bingo_Casino
 
         }
 
-        public void CheckIfSomeoneWinForHit(StackLayout stack, Grid grid)
+        public void CheckIfSomeoneWinForHit(StackLayout stack, Grid grid, int bet, Label label)
         {
             //if they crosed
             if (dealer.cardsRank > 21 && player.cardsRank > 21)
             {
-                GameOver(stack, grid, true);
+                GameOver(stack, grid, bet, true, label);
                 return;
             }
 
             //dealer crosed
             if (dealer.cardsRank > 21)
             {
-                GameOver(stack, grid, false);
+                GameOver(stack, grid, bet, false, label);
                 return;
             }
 
             //player crosed
             if (player.cardsRank > 21)
             {
-                GameOver(stack, grid, true);
+                GameOver(stack, grid, bet, true, label);
                 return;
             }
 
             //player got black jack
             if (player.cardsRank == 21)
             {
-                GameOver(stack, grid, false);
+                GameOver(stack, grid, bet, false, label);
                 return;
             }
 
             //dealer got black jack
             if (dealer.cardsRank == 21)
             {
-                GameOver(stack, grid, true);
+                GameOver(stack, grid, bet, true, label);
                 return;
             }
         }

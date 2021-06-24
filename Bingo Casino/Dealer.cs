@@ -10,7 +10,7 @@ namespace Bingo_Casino
 
         public void Add(StackLayout stack, Grid grid)
         {
-            AddOneCard(deck.deal(), stack, grid, true);
+            AddOneCard(deck.Deal(), stack, grid, true);
         }
 
         public void RemoveAll()
