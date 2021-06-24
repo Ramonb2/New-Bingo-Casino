@@ -9,11 +9,7 @@ using Xamarin.Forms;
 
 public class PokerGame
 {
-    public PokerGame()
-    {
-
-    }
-
+    
      public int totalBet = 10;
 
     public void CheckIfSomeoneWinForPoker(StackLayout stack, Grid grid, int bet, Label label)
