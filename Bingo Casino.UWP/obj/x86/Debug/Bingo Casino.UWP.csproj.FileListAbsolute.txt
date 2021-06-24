@@ -371,3 +371,5 @@ D:\minor\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\ProjectArchitectures.tx
 D:\minor\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\.winmd_cache\$Microsoft.Graphics.Canvas.winmd_636160679180000000.json
 D:\minor\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_636758480200000000.json
 D:\minor\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_637424743200000000.json
+C:\Users\co_mo\Documents\GitHub\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\Bingo Casino.UWP.exe
+C:\Users\co_mo\Documents\GitHub\New-Bingo-Casino\Bingo Casino.UWP\obj\x86\Debug\Bingo Casino.UWP.pdb
