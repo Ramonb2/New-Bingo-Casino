@@ -8,12 +8,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Bingo_Casino.Bingo_Casino.MainPage.xaml", "Bingo Casino/MainPage.xaml", typeof(global::Bingo_Casino.MainPage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Bingo_Casino.MainPage.xaml", "MainPage.xaml", typeof(global::Bingo_Casino.MainPage))]
 
 namespace Bingo_Casino {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Bingo Casino\\MainPage.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("MainPage.xaml")]
     public partial class MainPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
