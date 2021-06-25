@@ -12,10 +12,14 @@ namespace Bingo_Casino
 {
     class PokerTable : Hand
     {
-        D
+        private Deck deck;
+        public PokerTable(Deck deck)
+        {
+            this.deck = deck;
+        }
         public void AddP(StackLayout stack, Grid grid)
         {
-            AddOneCardForP(Deck.deal(), stack, grid, false, true);
+            AddOneCardForP(deck.deal(), stack, grid, false, true);
         }
         public void RemoveAll()
         {

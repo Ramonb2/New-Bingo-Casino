@@ -16,12 +16,14 @@ namespace Bingo_Casino
         private Deck deck;
         private PokerPlayer player;
         private Dealer dealer;
+        private PokerTable pokerTable;
 
         public PokerGame()
         {
             deck = new Deck();
             player = new PokerPlayer(deck);
             dealer = new Dealer(deck);
+            pokerTable = new PokerTable(deck);
 
         }
         public void CheckIfSomeoneWinForPoker(StackLayout stack, Grid grid, int bet, Label label)

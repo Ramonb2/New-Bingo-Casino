@@ -10,7 +10,7 @@ namespace Bingo_Casino
         private Deck deck;
         public Dealer(Deck deck)
         {
-            this.deck = deck
+            this.deck = deck;
         }
         public void Add(StackLayout stack, Grid grid)
         {
