@@ -8,15 +8,19 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 
 
-class PokerTable : Hand
+namespace Bingo_Casino
 {
-    public void AddP(StackLayout stack, Grid grid)
+    class PokerTable : Hand
     {
-        AddOneCardForP(Deck.deal(), stack, grid, false, true);
-    }
-    public void RemoveAll()
-    {
-        hand.Clear();
-        cardsRank = 0;
+        D
+        public void AddP(StackLayout stack, Grid grid)
+        {
+            AddOneCardForP(Deck.deal(), stack, grid, false, true);
+        }
+        public void RemoveAll()
+        {
+            hand.Clear();
+            cardsRank = 0;
+        }
     }
 }

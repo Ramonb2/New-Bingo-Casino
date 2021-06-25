@@ -26,6 +26,84 @@ namespace Bingo_Casino
         {
             return cardsRank;
         }
+
+        public void AddOneCardForP(Card card, StackLayout stack, Grid grid, bool dealer, bool midle)
+        {
+            if (midle == true && hand.Count >= 5)
+            {
+                return;
+            }
+
+            hand.Add(card);
+
+            Suit s = card.suit;
+            Rank r = card.rank;
+
+
+            //add image
+            Image m = new Image();
+
+            var assembly = typeof(MainPage);
+            string fileName = "";
+            string NameOfImage = "imageonline-co-split-image (" + ((int)r - 1) + ").png";
+
+            switch ((int)s)
+            {
+                case 1:
+                    fileName = "Bingo_Casino.Assets.Images.cards2.";
+                    break;
+
+                case 2:
+                    fileName = "Bingo_Casino.Assets.Images.cards.";
+                    break;
+
+                case 3:
+                    fileName = "Bingo_Casino.Assets.Images.cards1.";
+                    break;
+
+                case 4:
+                    fileName = "Bingo_Casino.Assets.Images.cards3.";
+                    break;
+            }
+            m.Source = ImageSource.FromResource(fileName + NameOfImage, assembly);
+            m.HeightRequest = (int)(stack.Height * 0.15);
+
+
+
+            //calculate points of images
+            double translateX = 0;
+            double translateY = 0;
+
+            if (hand.Count <= 1)
+            {
+                translateX = -(int)(stack.Height * 0.15) * hand.Count;
+            }
+            else
+            {
+                translateX = (int)(stack.Height * 0.15) * (hand.Count - 2);
+            }
+
+
+            if (dealer == true)
+            {
+                translateY = 0;
+            }
+            if (dealer == false)
+            {
+                translateY = stack.Height / 6 * 4;
+            }
+            if (midle == true)
+            {
+                translateY = (stack.Height / 6) * 2;
+                translateX = translateX - (int)(stack.Height * 0.15);
+            }
+
+
+
+            m.TranslateTo(translateX, translateY, 300);
+
+            grid.Children.Add(m);
+        }
         public void AddOneCard(Card card, StackLayout stack, Grid grid, bool dealer)
         {
             if (dealer == true && cardsRank > 17)

@@ -7,13 +7,19 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-
+namespace Bingo_Casino { 
 class PokerPlayer : Hand
     {
-        User user = new User();
+        private User user = new User();
+        private Deck deck;
+
+        public PokerPlayer(Deck deck)
+        {
+            this.deck = deck;
+        }
         public void Add(StackLayout stack, Grid grid)
         {
-            AddOneCardForP(Deck.deal(), stack, grid, false, false);
+            AddOneCardForP(deck.deal(), stack, grid, false, false);
         }
 
         public void RemoveAll()
@@ -23,3 +29,4 @@ class PokerPlayer : Hand
         }
 
     }
+}
