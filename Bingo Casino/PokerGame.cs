@@ -15,10 +15,14 @@ namespace Bingo_Casino
         public int totalBet = 10;
         private Deck deck;
         private PokerPlayer player;
+        private Dealer dealer;
+
         public PokerGame()
         {
             deck = new Deck();
             player = new PokerPlayer(deck);
+            dealer = new Dealer(deck);
+
         }
         public void CheckIfSomeoneWinForPoker(StackLayout stack, Grid grid, int bet, Label label)
         {

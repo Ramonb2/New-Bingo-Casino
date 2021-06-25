@@ -68,3 +68,6 @@ D:\minor\New-Bingo-Casino\Bingo Casino\obj\Debug\netstandard2.0\XamlC.stamp
 D:\minor\New-Bingo-Casino\Bingo Casino\obj\Debug\netstandard2.0\Bingo Casino.dll
 D:\minor\New-Bingo-Casino\Bingo Casino\obj\Debug\netstandard2.0\ref\Bingo Casino.dll
 D:\minor\New-Bingo-Casino\Bingo Casino\obj\Debug\netstandard2.0\Bingo Casino.pdb
+C:\Users\co_mo\Documents\GitHub\New-Bingo-Casino\Bingo Casino\obj\Debug\netstandard2.0\Bingo Casino.dll
+C:\Users\co_mo\Documents\GitHub\New-Bingo-Casino\Bingo Casino\obj\Debug\netstandard2.0\ref\Bingo Casino.dll
+C:\Users\co_mo\Documents\GitHub\New-Bingo-Casino\Bingo Casino\obj\Debug\netstandard2.0\Bingo Casino.pdb

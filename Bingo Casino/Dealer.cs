@@ -7,7 +7,11 @@ namespace Bingo_Casino
 {
     class Dealer :Hand
     {
-
+        private Deck deck;
+        public Dealer(Deck deck)
+        {
+            this.deck = deck
+        }
         public void Add(StackLayout stack, Grid grid)
         {
             AddOneCard(deck.deal(), stack, grid, true);
