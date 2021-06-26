@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\Ramon\Documents\github\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-06-24T10:07:44.063</Modified>
+      <Modified>2021-06-26T11:01:52.685</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Ramon\Documents\github\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\Bingo Casino.UWP.exe">
       <PackagePath>entrypoint\Bingo Casino.UWP.exe</PackagePath>
-      <Modified>2021-06-24T10:07:42.449</Modified>
+      <Modified>2021-06-26T11:01:50.636</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ramon\.nuget\packages\plugin.audiorecorder\1.1.0\lib\netcore50\Plugin.AudioRecorder.dll">
       <PackagePath>Plugin.AudioRecorder.dll</PackagePath>
@@ -96,7 +96,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ramon\Documents\github\New-Bingo-Casino\Bingo Casino\bin\Debug\netstandard2.0\Bingo Casino.dll">
       <PackagePath>Bingo Casino.dll</PackagePath>
-      <Modified>2021-06-24T10:07:37.364</Modified>
+      <Modified>2021-06-26T11:01:45.117</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ramon\.nuget\packages\win2d.uwp\1.20.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
@@ -251,15 +251,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ramon\Documents\github\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\Bingo Casino.UWP.xr.xml">
       <PackagePath>Bingo Casino.UWP.xr.xml</PackagePath>
-      <Modified>2021-06-24T10:03:01.225</Modified>
+      <Modified>2021-06-25T11:18:28.903</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ramon\Documents\github\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2021-06-24T10:07:42.372</Modified>
+      <Modified>2021-06-26T11:01:50.565</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ramon\Documents\github\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2021-06-24T10:07:42.372</Modified>
+      <Modified>2021-06-26T11:01:50.565</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.17763.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -275,11 +275,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ramon\Documents\github\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2021-06-24T10:07:42.780</Modified>
+      <Modified>2021-06-26T11:01:51.199</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ramon\Documents\github\New-Bingo-Casino\Bingo Casino.UWP\bin\x86\Debug\Core\Bingo Casino.UWP.exe">
       <PackagePath>Bingo Casino.UWP.exe</PackagePath>
-      <Modified>2021-06-24T10:07:44.059</Modified>
+      <Modified>2021-06-26T11:01:52.680</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -31,12 +31,16 @@
             <Label x:Name="lbl1or11" Text="1 or 11 for A" FontSize="15"  TextColor="White"  IsVisible="false"/>
             <Button x:Name="one" Clicked="one_Clicked" WidthRequest="60" Text="1" BackgroundColor="White" VerticalOptions="Center" FontSize="15" TextColor="Black" IsVisible="false"/>
             <Button x:Name="eleven" Clicked="eleven_Clicked" WidthRequest="60" Text="11" BackgroundColor="White" VerticalOptions="Center" FontSize="15" TextColor="Black" IsVisible="false"/>
+            <Button x:Name="Play" Clicked="Play_Clicked"  Text="Play" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center" FontSize="15" TextColor="Black" IsVisible="false"/>
+
+            <!--     <Button x:Name="Play1" Clicked="Play1_Clicked"  Text="Play" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center" FontSize="15" TextColor="Black" IsVisible="false"/> -->
 
             <Label x:Name="lblHowMuch" Text="How many tokens to the game:" IsVisible="false" FontSize="20"></Label>
             <Entry x:Name="HowMuch" IsPassword="False" IsVisible="false"/>
 
         </StackLayout>
 
+        <Label x:Name="label" Text="Dealer" VerticalOptions="Start" FontSize="30" HorizontalOptions="Center"/>
 
         <!-- <Label x:Name="label" Text="Dealer" VerticalOptions="Start" FontSize="30" HorizontalOptions="Center"/> -->
 
