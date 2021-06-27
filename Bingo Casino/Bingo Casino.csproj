@@ -11,6 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\cardSound.mp3" />
     <None Remove="Assets\Images\cards1\imageonline-co-split-image %281%29.png" />
     <None Remove="Assets\Images\cards1\imageonline-co-split-image %2810%29.png" />
     <None Remove="Assets\Images\cards1\imageonline-co-split-image %2811%29.png" />
@@ -72,7 +73,6 @@
     <None Remove="Assets\Images\cards\imageonline-co-split-image %289%29.png" />
     <None Remove="Assets\Images\cards\imageonline-co-split-image (0).png" />
     <None Remove="Assets\Images\coin.png" />
-    <None Remove="Assets\zapsplat_leisure_playing_cards_dealing_table_001_20483 %28mp3cut.net%29 %282%29.mp3" />
     <None Remove="Assets\zapsplat_leisure_playing_cards_dealing_table_001_20483.mp3" />
   </ItemGroup>
 
@@ -140,7 +140,7 @@
     <EmbeddedResource Include="Assets\Images\coin.png" />
     <EmbeddedResource Include="Assets\Images\GreenBG.jpg" />
     <EmbeddedResource Include="Assets\Images\setting.png" />
-    <EmbeddedResource Include="Assets\zapsplat_leisure_playing_cards_dealing_table_001_20483 (mp3cut.net) (2).mp3" />
+    <EmbeddedResource Include="Assets\cardSound.mp3" />
   </ItemGroup>
 
   <ItemGroup>
