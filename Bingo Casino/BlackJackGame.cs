@@ -26,7 +26,6 @@ namespace Bingo_Casino
         {
 
 
-            showCardOfTheDealer(stack, grid);
             Label l = new Label();
             l.FontSize = 40;
             l.VerticalOptions = LayoutOptions.Center;
@@ -65,10 +64,9 @@ namespace Bingo_Casino
             grid.Children.Clear();
             player.removeAll();
             dealer.removeAll();
-
-            addCard2Hand(stack, grid, "dealer");
-            addCard2Hand(stack, grid, "player");
-            addCard2Hand(stack, grid, "player");
+            dealer.addCard2Hand(stack, grid, deck,false,true);
+            player.addCard2Hand(stack, grid, deck);
+            player.addCard2Hand(stack, grid, deck);
             //unabeld all elements
             foreach (var v in stack.Children)
             {
@@ -89,40 +87,41 @@ namespace Bingo_Casino
             //if they crosed
             if (dealer.cardsRank > 21 && player.cardsRank > 21)
             {
-                GameOver(stack, grid, bet, true, label);
+                GameOver(stack, grid, bet,true, label);
                 return;
             }
 
             //if they have same value
-            if (dealer.cardsRank == player.cardsRank)
-            {
-                GameOver(stack, grid, bet, true, label);
-                return;
-            }
 
-            if (dealer.cardsRank >= 17)
+
+            if (dealer.cardsRank > 17)
             {
+                if (dealer.cardsRank == player.cardsRank)
+                {
+                    GameOver(stack, grid, bet, true, label);
+                    return;
+                }
 
                 if (dealer.cardsRank >= player.cardsRank)
                 {
                     if (dealer.cardsRank <= 21)
                     {
-                        GameOver(stack, grid, bet, true, label);
+                        GameOver(stack, grid, bet,true,  label);
                     }
                     else
                     {
-                        GameOver(stack, grid, bet, false, label);
+                        GameOver(stack, grid, bet, false,  label);
                     }
                 }
                 else
                 {
                     if (player.cardsRank < 21)
                     {
-                        GameOver(stack, grid, bet, false, label);
+                        GameOver(stack, grid, bet, false,  label);
                     }
                     else
                     {
-                        GameOver(stack, grid, bet, true, label);
+                        GameOver(stack, grid, bet, true,  label);
                     }
 
                 }
@@ -134,26 +133,26 @@ namespace Bingo_Casino
             //if they crosed
             if (dealer.cardsRank > 21 && player.cardsRank > 21)
             {
-                GameOver(stack, grid, bet, true, label);
+                GameOver(stack, grid, bet, true,  label);
                 return;
             }
 
             //dealer crosed
             if (dealer.cardsRank > 21)
             {
-                GameOver(stack, grid, bet, false, label);
+                GameOver(stack, grid, bet, false,  label);
                 return;
             }
 
             //player crosed
             if (player.cardsRank > 21)
             {
-                GameOver(stack, grid, bet, true, label);
+                GameOver(stack, grid, bet, true,label);
                 return;
             }
 
             //player got black jack
-            if (player.cardsRank == 21)
+            if (player.cardsRank == 21 )
             {
                 GameOver(stack, grid, bet, false, label);
                 return;
@@ -162,87 +161,12 @@ namespace Bingo_Casino
             //dealer got black jack
             if (dealer.cardsRank == 21)
             {
-                GameOver(stack, grid, bet, true, label);
+                GameOver(stack, grid, bet, true,  label);
                 return;
             }
-        }
-
-        public async void addCard2Hand(StackLayout stack, Grid grid, string test = "player", bool forStep = false)
-        {
-
-            Card tempCard = deck.deal();
-            deck.removeCard(tempCard);
-            switch ((string)test)
-            {
-                case "player":
-                    player.addOneCardForP(tempCard, stack, grid, false, false);
-                    break;
-
-                case "dealer":
-                    if (forStep)
-                    {
-                        while (dealer.cardsRank <= 17 && forStep == true)
-                        {
-                            Card tempCard2 = deck.deal();
-                            dealer.addOneCardForP(tempCard2, stack, grid, true, false, false);
-                            deck.removeCard(tempCard2);
-                        }
-                    }
-                    else
-                    {
-                        dealer.addOneCardForP(tempCard, stack, grid, true, false, false);
-
-                    }
-                    break;
-            }
-
-            await Task.Delay(500);
 
         }
-        public void showCardOfTheDealer(StackLayout stack, Grid grid)
-        {
 
-            switch (dealer.hand_count())
-
-            {
-                case 1:
-                    Card card = dealer.hand[0];
-                    dealer.removeAll();
-                    dealer.addOneCardForP(card, stack, grid, true, false, true);
-                    break;
-                case 2:
-                    Card card2 = dealer.hand[0];
-                    Card card3 = dealer.hand[1];
-                    dealer.removeAll();
-
-                    dealer.addOneCardForP(card2, stack, grid, true, false, true);
-                    dealer.addOneCardForP(card3, stack, grid, true, false, true);
-                    break;
-                case 3:
-                    Card card4 = dealer.hand[0];
-                    Card card5 = dealer.hand[1];
-                    Card card6 = dealer.hand[2];
-                    dealer.removeAll();
-
-                    dealer.addOneCardForP(card4, stack, grid, true, false, true);
-                    dealer.addOneCardForP(card5, stack, grid, true, false, true);
-                    dealer.addOneCardForP(card6, stack, grid, true, false, true);
-                    break;
-                case 4:
-                    Card card7 = dealer.hand[0];
-                    Card card8 = dealer.hand[1]; ;
-                    Card card9 = dealer.hand[2];
-                    Card card10 = dealer.hand[3];
-                    dealer.removeAll();
-
-                    dealer.addOneCardForP(card7, stack, grid, true, false, true);
-                    dealer.addOneCardForP(card8, stack, grid, true, false, true);
-                    dealer.addOneCardForP(card9, stack, grid, true, false, true);
-                    dealer.addOneCardForP(card10, stack, grid, true, false, true);
-                    break;
-
-            }
-
-        }
+    
     }
 }

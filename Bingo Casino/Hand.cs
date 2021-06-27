@@ -11,7 +11,7 @@ namespace Bingo_Casino
 
         public int HowMuchForA = 11;
 
-        public int cardsRank;
+        public int cardsRank=0;
 
         public int MaxHandSize = 2;
 
@@ -26,40 +26,35 @@ namespace Bingo_Casino
 
             hand.Add(card);
 
-
             Suit s = card.suit;
             Rank r = card.rank;
-            string rank = r.ToString();
-            int image_number = (int)r;
-            cardsRank = totalValueOfTheHand();
-            switch (rank)
 
+            if (!showImage )
             {
-                case "J":
-                    image_number = 10;
-                    break;
-                case "Q":
-                    image_number = 11;
-                    break;
-                case "K":
-                    image_number = 12;
-                    break;
-                case "A":
-                    image_number = 0;
-                    break;
-
+                r = Rank.Back;
+            }
+            if ((int)card.rank == 1 && dealer == false)
+            {
+                cardsRank = cardsRank + HowMuchForA;
+            }
+            else
+            {
+                if ((int)card.rank > 10)
+                {
+                    cardsRank = cardsRank + 10;
+                }
+                else
+                {
+                    cardsRank = cardsRank + (int)card.rank;
+                }
             }
 
-            if (!showImage)
-            {
-               image_number = 14;
-            }
             //add image
             Image m = new Image();
 
             var assembly = typeof(MainPage);
             string fileName = "";
-            string NameOfImage = "imageonline-co-split-image (" + ((int)image_number) + ").png";
+            string NameOfImage = "imageonline-co-split-image (" + ((int)r - 1) + ").png";
 
             switch ((int)s)
             {
@@ -158,6 +153,21 @@ namespace Bingo_Casino
             foreach (Card c in hand)
             {
                 Rank r = c.rank;
+                if ((int)c.rank == 1)
+                {
+                    cardsRank = cardsRank + HowMuchForA;
+                }
+                else
+                {
+                    if ((int)c.rank > 10)
+                    {
+                        cardsRank = cardsRank + 10;
+                    }
+                    else
+                    {
+                        cardsRank = cardsRank + (int)c.rank;
+                    }
+                }
                 cardsRank += (int)r;
             }
 

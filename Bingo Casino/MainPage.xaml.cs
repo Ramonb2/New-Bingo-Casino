@@ -130,9 +130,8 @@ namespace Bingo_Casino
         private void hit_Clicked(object sender, EventArgs e)
         {
             gameLaunch.setting.sound("cardSound.mp3");
-            gameLaunch.blackJackGame.addCard2Hand(stackL, grid, "player");
-            //gameLaunch.blackJackGame.player.add(stackL, grid, gameLaunch.blackJackGame.deck);
-            gameLaunch.blackJackGame.CheckIfSomeoneWinForStep(stackL, grid, Math.Abs(int.Parse(HowMuch.Text)), lblUserTokens);
+            gameLaunch.blackJackGame.player.addCard2Hand(stackL, grid, gameLaunch.blackJackGame.deck);
+            gameLaunch.blackJackGame.CheckIfSomeoneWinForHit(stackL, grid, Math.Abs(int.Parse(HowMuch.Text)), lblUserTokens);
 
             if (gameLaunch.user.addMoney < 0)
             {
@@ -144,7 +143,7 @@ namespace Bingo_Casino
         private void stand_Clicked(object sender, EventArgs e)
         {
             gameLaunch.setting.sound("cardSound.mp3");
-            gameLaunch.blackJackGame.addCard2Hand(stackL, grid, "dealer",true);
+            gameLaunch.blackJackGame.dealer.addCard2Hand(stackL, grid, gameLaunch.blackJackGame.deck, true,true);
             // gameLaunch.blackJackGame.dealer.addBL(stackL, grid, true, gameLaunch.blackJackGame.deck);
             gameLaunch.blackJackGame.CheckIfSomeoneWinForStep(stackL, grid, Math.Abs(int.Parse(HowMuch.Text)), lblUserTokens);
             if (gameLaunch.user.addMoney < 0)
@@ -168,30 +167,28 @@ namespace Bingo_Casino
         }
         public void StartBL()
         {
-           // gameLaunch.blackJackGame.dealer.addBL(stackL, grid, false, gameLaunch.blackJackGame.deck);
-           // gameLaunch.blackJackGame.player.add(stackL, grid, gameLaunch.blackJackGame.deck);
-           // gameLaunch.blackJackGame.player.add(stackL, grid, gameLaunch.blackJackGame.deck);
-            gameLaunch.blackJackGame.addCard2Hand(stackL, grid, "dealer");
-            gameLaunch.blackJackGame.addCard2Hand(stackL, grid, "player");
-            gameLaunch.blackJackGame.addCard2Hand(stackL, grid, "player");
+            gameLaunch.blackJackGame.dealer.addCard2Hand(stackL, grid, gameLaunch.blackJackGame.deck,false,true);
+            gameLaunch.blackJackGame.player.addCard2Hand(stackL, grid, gameLaunch.blackJackGame.deck);
+            gameLaunch.blackJackGame.player.addCard2Hand(stackL, grid, gameLaunch.blackJackGame.deck);
         }
 
         public void StartP()
         {
-            gameLaunch.pokerGame.addCard2Hand(stackL, grid, "player");
-            gameLaunch.pokerGame.addCard2Hand(stackL, grid, "player");
-            gameLaunch.pokerGame.addCard2Hand(stackL, grid, "dealer");
-            gameLaunch.pokerGame.addCard2Hand(stackL, grid, "dealer");
-            gameLaunch.pokerGame.addCard2Hand(stackL, grid, "table");
-            gameLaunch.pokerGame.addCard2Hand(stackL, grid,  "table");
-            gameLaunch.pokerGame.addCard2Hand(stackL, grid,  "table");
+            gameLaunch.pokerGame.player.addCard2Hand(stackL, grid, gameLaunch.pokerGame.deck);
+            gameLaunch.pokerGame.player.addCard2Hand(stackL, grid, gameLaunch.pokerGame.deck);
+            gameLaunch.pokerGame.dealer.addCard2Hand(stackL, grid, gameLaunch.pokerGame.deck);
+            gameLaunch.pokerGame.dealer.addCard2Hand(stackL, grid, gameLaunch.pokerGame.deck);
+            gameLaunch.pokerGame.pokerTable.addCard2Hand(stackL, grid, gameLaunch.pokerGame.deck);
+            gameLaunch.pokerGame.pokerTable.addCard2Hand(stackL, grid, gameLaunch.pokerGame.deck);
+            gameLaunch.pokerGame.pokerTable.addCard2Hand(stackL, grid, gameLaunch.pokerGame.deck);
+
 
 
         }
         private void Next_Clicked(object sender, EventArgs e)
         {
             gameLaunch.setting.sound("cardSound.mp3");
-            gameLaunch.pokerGame.addCard2Hand(stackL, grid,  "table");
+            gameLaunch.pokerGame.pokerTable.addCard2Hand(stackL, grid, gameLaunch.pokerGame.deck);
             gameLaunch.pokerGame.checkIfSomeoneWinForPoker(stackL, grid, gameLaunch.pokerGame.totalBet, lblUserTokens);
             if (gameLaunch.user.addMoney < 0)
             {
@@ -252,7 +249,7 @@ namespace Bingo_Casino
         private void Bet_Clicked(object sender, EventArgs e)
         {
             gameLaunch.setting.sound("cardSound.mp3");
-            gameLaunch.pokerGame.addCard2Hand(stackL, grid, "table");
+            gameLaunch.pokerGame.pokerTable.addCard2Hand(stackL, grid, gameLaunch.pokerGame.deck);
             gameLaunch.pokerGame.totalBet = gameLaunch.pokerGame.totalBet + Math.Abs(int.Parse(HowMuch.Text));
             gameLaunch.pokerGame.checkIfSomeoneWinForPoker(stackL, grid, gameLaunch.pokerGame.totalBet, lblUserTokens);
             MoneyInGame.Text = "Your money in game:" + gameLaunch.pokerGame.totalBet.ToString();
@@ -264,8 +261,7 @@ namespace Bingo_Casino
             {
                 loseAllGame();
             }
-            // gameLaunch.user.addMoney = gameLaunch.user.addMoney - Math.Abs(int.Parse(HowMuch.Text));
-            //gameLaunch.setMoney(lblUserTokens);
+    
         }
 
 
@@ -275,9 +271,7 @@ namespace Bingo_Casino
             await Task.Delay(3000);
             //same that is in the back
             Back.IsVisible = false;
-            //BlackJack.IsVisible = true;
-            //Poker.IsVisible = true;
-            //Settings.IsVisible = true;
+    
             hit.IsVisible = false;
             stand.IsVisible = false;
 

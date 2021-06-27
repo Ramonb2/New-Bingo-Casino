@@ -407,13 +407,13 @@ namespace Bingo_Casino
                     player.removeAll();
                     dealer.removeAll();
                     pokerTable.removeAll();
-                    addCard2Hand(stack, grid, "dealer");
-                    addCard2Hand(stack, grid, "dealer");
-                    addCard2Hand(stack, grid, "table");
-                    addCard2Hand(stack, grid, "table");
-                    addCard2Hand(stack, grid, "table");
-                    addCard2Hand(stack, grid, "player");
-                    addCard2Hand(stack, grid, "player");
+                    dealer.addCard2Hand(stack, grid, deck);
+                    dealer.addCard2Hand(stack, grid, deck);
+                    pokerTable.addCard2Hand(stack, grid, deck);
+                    pokerTable.addCard2Hand(stack, grid, deck);
+                    pokerTable.addCard2Hand(stack, grid, deck);
+                    player.addCard2Hand(stack, grid, deck);
+                    player.addCard2Hand(stack, grid, deck);
                 }
 
             }
@@ -428,29 +428,7 @@ namespace Bingo_Casino
                 }
             }
         }
-        public async void addCard2Hand(StackLayout stack, Grid grid, string test = "player")
-        {
 
-            Card tempCard = deck.deal();
-            deck.removeCard(tempCard);
-            switch ((string)test)
-            {
-                case "player":
-                    player.addOneCardForP(tempCard, stack, grid, false, false);
-                    break;
-
-                case "dealer":
-                    dealer.addOneCardForP(tempCard, stack, grid, true, false,false);
-                    break;
-
-                case "table":
-                    pokerTable.addOneCardForP(tempCard, stack, grid, false, true);
-                    break;
-            }
-
-            await Task.Delay(500);
-
-        }
 
     }
 }
