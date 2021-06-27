@@ -15,7 +15,7 @@ namespace Bingo_Casino
 
 
         //This will play sound
-        Stream GetStreamFromFile(string filename)
+        Stream getStreamFromFile(string filename)
         {
             var assembly = typeof(App).GetTypeInfo().Assembly;
             var stream = assembly.GetManifestResourceStream("Bingo_Casino.Assets." + filename);
@@ -29,7 +29,7 @@ namespace Bingo_Casino
             {
                 Stream stream;
 
-                stream = GetStreamFromFile(fileName);
+                stream = getStreamFromFile(fileName);
 
                 sound_player.Load(stream);
 

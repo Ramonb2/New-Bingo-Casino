@@ -7,15 +7,12 @@ namespace Bingo_Casino
 {
     class BlackJackPlayer :Hand
     {
-        private Deck deck;
-        public BlackJackPlayer(Deck deck)
-        {
-            this.deck = deck;
-        }
 
-        public void Add(StackLayout stack, Grid grid)
+        public void add(StackLayout stack, Grid grid,Deck deck)
         {
-            AddOneCard(deck.Deal(), stack, grid, false);
+            Card tempCard = deck.deal();
+            addOneCard(deck.deal(), stack, grid, false);
+            deck.removeCard(tempCard);
         }
 
         public void doubleDown()
@@ -23,8 +20,7 @@ namespace Bingo_Casino
 
         }
 
-
-        public void RemoveAll()
+        public void removeAll()
         {
             hand.Clear();
             cardsRank = 0;

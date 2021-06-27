@@ -13,421 +13,427 @@ namespace Bingo_Casino
 
     {
 
-    public int totalBet = 10;
-    public Deck deck;
-    public PokerPlayer player;
-    public Dealer dealer;
-    public PokerTable pokerTable;
-    private User user;
+        public int totalBet = 10;
+        public Deck deck;
+        public PokerPlayer player;
+        public Dealer dealer;
+        public PokerTable pokerTable;
+        private User user;
 
-    public PokerGame()
-    {
-        deck = new Deck();
-        player = new PokerPlayer(deck);
-        dealer = new Dealer(deck);
-        pokerTable = new PokerTable(deck);
-        user = new User();
-
-    }
-
-    public void CheckIfSomeoneWinForPoker(StackLayout stack, Grid grid, int bet, Label label)
-    {
-        if (pokerTable.hand.Count == 5)
+        public PokerGame()
         {
-            totalBet = 0;
-            int cardsValueOfPlayer = 0;
-            int cardsValueOfDealer = 0;
+            deck = new Deck();
+            player = new PokerPlayer();
+            dealer = new Dealer();
+            pokerTable = new PokerTable();
+            user = new User();
+        }
 
-
-
-
-            //cound value of player cards
-            if (IsTherePair(player.hand) == true)
+        public void checkIfSomeoneWinForPoker(StackLayout stack, Grid grid, int bet, Label label)
+        {
+            if (pokerTable.hand.Count == 5)
             {
-                cardsValueOfPlayer = (int) PokerCardsValue.pair;
-            }
-
-            if (CheckTwoPair(player.hand) == true)
-            {
-                cardsValueOfPlayer = (int) PokerCardsValue.twoPairs;
-            }
-
-            if (CheckTrips(player.hand) == true)
-            {
-                cardsValueOfPlayer = (int) PokerCardsValue.trinity;
-            }
-
-            if (CheckStraight(player.hand) == true)
-            {
-                cardsValueOfPlayer = (int) PokerCardsValue.straight;
-            }
-
-            if (CheckFlush(player.hand) == true)
-            {
-                cardsValueOfPlayer = (int) PokerCardsValue.flush;
-            }
-
-            if (CheckFullHouse(player.hand) == true)
-            {
-                cardsValueOfPlayer = (int) PokerCardsValue.fullHouse;
-            }
-
-            if (CheckQuads(player.hand) == true)
-            {
-                cardsValueOfPlayer = (int) PokerCardsValue.Foursome;
-            }
-
-            if (CheckStraightFlush(player.hand) == true)
-            {
-                cardsValueOfPlayer = (int) PokerCardsValue.straightFlush;
-            }
+                totalBet = 0;
+                int cardsValueOfPlayer = 0;
+                int cardsValueOfDealer = 0;
 
 
 
 
-
-
-
-
-            //cound value of dealer cards
-            if (IsTherePair(dealer.hand) == true)
-            {
-                cardsValueOfDealer = (int) PokerCardsValue.pair;
-            }
-
-            if (CheckTwoPair(dealer.hand) == true)
-            {
-                cardsValueOfDealer = (int) PokerCardsValue.twoPairs;
-            }
-
-            if (CheckTrips(dealer.hand) == true)
-            {
-                cardsValueOfDealer = (int) PokerCardsValue.trinity;
-            }
-
-            if (CheckStraight(dealer.hand) == true)
-            {
-                cardsValueOfDealer = (int) PokerCardsValue.straight;
-            }
-
-            if (CheckFlush(dealer.hand) == true)
-            {
-                cardsValueOfDealer = (int) PokerCardsValue.flush;
-            }
-
-            if (CheckFullHouse(dealer.hand) == true)
-            {
-                cardsValueOfDealer = (int) PokerCardsValue.fullHouse;
-            }
-
-            if (CheckQuads(dealer.hand) == true)
-            {
-                cardsValueOfDealer = (int) PokerCardsValue.Foursome;
-            }
-
-            if (CheckStraightFlush(dealer.hand) == true)
-            {
-                cardsValueOfDealer = (int) PokerCardsValue.straightFlush;
-            }
-
-
-
-
-
-            //who win
-            if (cardsValueOfDealer > cardsValueOfPlayer)
-            {
-                GameOver(stack, grid, true, bet, label, true);
-                return;
-            }
-
-            if (cardsValueOfDealer < cardsValueOfPlayer)
-            {
-                GameOver(stack, grid, false, bet, label, true);
-                return;
-            }
-
-            //if thay have same pairs and others
-            if (cardsValueOfDealer == cardsValueOfPlayer)
-            {
-                int highestCardofPlayer;
-                int highestCardofDealer;
-
-                //witch card is highest
-                if ((int) player.hand[0].rank < (int) player.hand[1].rank)
+                //cound value of player cards
+                if (isTherePair(player.hand) == true)
                 {
-                    highestCardofPlayer = (int) player.hand[1].rank;
-                }
-                else
-                {
-                    highestCardofPlayer = (int) player.hand[0].rank;
+                    cardsValueOfPlayer = (int)PokerCardsValue.pair;
                 }
 
-                if ((int) dealer.hand[0].rank < (int) dealer.hand[1].rank)
+                if (checkTwoPair(player.hand) == true)
                 {
-                    highestCardofDealer = (int) dealer.hand[1].rank;
-                }
-                else
-                {
-                    highestCardofDealer = (int) dealer.hand[0].rank;
+                    cardsValueOfPlayer = (int)PokerCardsValue.twoPairs;
                 }
 
-                if ((int) player.hand[0].rank == 1 || (int) player.hand[1].rank == 1)
+                if (checkTrips(player.hand) == true)
                 {
-                    highestCardofPlayer = 11;
+                    cardsValueOfPlayer = (int)PokerCardsValue.trinity;
                 }
 
-                if ((int) dealer.hand[0].rank == 1 || (int) dealer.hand[1].rank == 1)
+                if (checkStraight(player.hand) == true)
                 {
-                    highestCardofDealer = 11;
+                    cardsValueOfPlayer = (int)PokerCardsValue.straight;
+                }
+
+                if (checkFlush(player.hand) == true)
+                {
+                    cardsValueOfPlayer = (int)PokerCardsValue.flush;
+                }
+
+                if (checkFullHouse(player.hand) == true)
+                {
+                    cardsValueOfPlayer = (int)PokerCardsValue.fullHouse;
+                }
+
+                if (checkQuads(player.hand) == true)
+                {
+                    cardsValueOfPlayer = (int)PokerCardsValue.Foursome;
+                }
+
+                if (checkStraightFlush(player.hand) == true)
+                {
+                    cardsValueOfPlayer = (int)PokerCardsValue.straightFlush;
                 }
 
 
 
-                if ((int) player.hand[0].rank + player.hand[1].rank <= (int) dealer.hand[0].rank + dealer.hand[1].rank)
+
+
+
+
+
+                //cound value of dealer cards
+                if (isTherePair(dealer.hand) == true)
                 {
-                    GameOver(stack, grid, true, bet, label, true);
+                    cardsValueOfDealer = (int)PokerCardsValue.pair;
                 }
-                else
+
+                if (checkTwoPair(dealer.hand) == true)
                 {
-                    GameOver(stack, grid, false, bet, label, true);
+                    cardsValueOfDealer = (int)PokerCardsValue.twoPairs;
+                }
+
+                if (checkTrips(dealer.hand) == true)
+                {
+                    cardsValueOfDealer = (int)PokerCardsValue.trinity;
+                }
+
+                if (checkStraight(dealer.hand) == true)
+                {
+                    cardsValueOfDealer = (int)PokerCardsValue.straight;
+                }
+
+                if (checkFlush(dealer.hand) == true)
+                {
+                    cardsValueOfDealer = (int)PokerCardsValue.flush;
+                }
+
+                if (checkFullHouse(dealer.hand) == true)
+                {
+                    cardsValueOfDealer = (int)PokerCardsValue.fullHouse;
+                }
+
+                if (checkQuads(dealer.hand) == true)
+                {
+                    cardsValueOfDealer = (int)PokerCardsValue.Foursome;
+                }
+
+                if (checkStraightFlush(dealer.hand) == true)
+                {
+                    cardsValueOfDealer = (int)PokerCardsValue.straightFlush;
+                }
+
+
+
+
+
+                //who win
+                if (cardsValueOfDealer > cardsValueOfPlayer)
+                {
+                    gameOver(stack, grid, true, bet, label, true);
+                    return;
+                }
+
+                if (cardsValueOfDealer < cardsValueOfPlayer)
+                {
+                    gameOver(stack, grid, false, bet, label, true);
+                    return;
+                }
+
+                //if thay have same pairs and others
+                if (cardsValueOfDealer == cardsValueOfPlayer)
+                {
+                    int highestCardofPlayer;
+                    int highestCardofDealer;
+
+                    //witch card is highest
+                    if ((int)player.hand[0].rank < (int)player.hand[1].rank)
+                    {
+                        highestCardofPlayer = (int)player.hand[1].rank;
+                    }
+                    else
+                    {
+                        highestCardofPlayer = (int)player.hand[0].rank;
+                    }
+
+                    if ((int)dealer.hand[0].rank < (int)dealer.hand[1].rank)
+                    {
+                        highestCardofDealer = (int)dealer.hand[1].rank;
+                    }
+                    else
+                    {
+                        highestCardofDealer = (int)dealer.hand[0].rank;
+                    }
+
+                    if ((int)player.hand[0].rank == 1 || (int)player.hand[1].rank == 1)
+                    {
+                        highestCardofPlayer = 11;
+                    }
+
+                    if ((int)dealer.hand[0].rank == 1 || (int)dealer.hand[1].rank == 1)
+                    {
+                        highestCardofDealer = 11;
+                    }
+
+
+
+                    if ((int)player.hand[0].rank + player.hand[1].rank <= (int)dealer.hand[0].rank + dealer.hand[1].rank)
+                    {
+                        gameOver(stack, grid, true, bet, label, true);
+                    }
+                    else
+                    {
+                        gameOver(stack, grid, false, bet, label, true);
+                    }
                 }
             }
+
         }
 
-    }
-
-    bool IsTherePair(List<Card> DealerOrPlayer)
-    {
-        List<Card> cards = new List<Card>();
-        cards.AddRange(DealerOrPlayer);
-        cards.AddRange(pokerTable.hand);
-        //foreach(Card c in pokerTable.hand)
-        //{
-        //    foreach(Card i in DealerOrPlayer)
-        //    {
-
-        //    }    
-        //}
-
-
-        return cards.GroupBy(card => card.rank).Count(group => group.Count() == 2) == 1;
-    }
-
-    bool CheckTwoPair(List<Card> DealerOrPlayer)
-    {
-        List<Card> cards = new List<Card>();
-        cards.AddRange(DealerOrPlayer);
-        cards.AddRange(pokerTable.hand);
-
-        //see if there are 2 lots of exactly 2 cards card the same rank.
-        return cards.GroupBy(card => card.rank).Count(group => group.Count() >= 2) == 2;
-    }
-
-    bool CheckTrips(List<Card> DealerOrPlayer)
-    {
-        List<Card> cards = new List<Card>();
-        cards.AddRange(DealerOrPlayer);
-        cards.AddRange(pokerTable.hand);
-
-        //see if exactly 3 cards card the same rank.
-        return cards.GroupBy(card => card.rank).Any(group => group.Count() == 3);
-    }
-
-    bool CheckStraight(List<Card> DealerOrPlayer)
-    {
-        List<Card> cards = new List<Card>();
-        cards.AddRange(DealerOrPlayer);
-        cards.AddRange(pokerTable.hand);
-
-        //helping variable
-        List<Card> listCards = new List<Card>();
-        int highestRank = 0;
-
-        //// order by decending to see order
-        //var cardsInOrder = cards.OrderByDescending(a => a.rank).ToList();
-        //// check for ace as can be high and low
-        //if (cardsInOrder.First().rank.ToString() == "A")
-        //{
-        //    // check if straight with ace has has 2 values
-        //    bool highStraight = cards.Where(a => a.rank.ToString() == "K" || a.rank.ToString() == "Q" || a.rank.ToString() == "J" || a.rank.ToString() == "10").Count() == 4;
-        //    bool lowStraight = cards.Where(a => a.rank.ToString() == "2" || a.rank.ToString() == "3" || a.rank.ToString() == "4" || a.rank.ToString() == "5").Count() == 4;
-        //    // return true if straight with ace
-        //    if (lowStraight == true || highStraight == true)
-        //    {
-        //        return true;
-        //    }
-        //}
-        //else
-        //{
-        //    // check for straight here
-        //    return true;
-        //}
-        //// no straight if reached here.
-        //return false;
-
-        //for(int i  = 0; i<cards.Count;)
-        //{
-
-
-        //find highest rank card
-        foreach (Card c in cards)
+        bool isTherePair(List<Card> DealerOrPlayer)
         {
-            if ((int) c.rank > highestRank)
+            List<Card> cards = new List<Card>();
+            cards.AddRange(DealerOrPlayer);
+            cards.AddRange(pokerTable.hand);
+            //foreach(Card c in pokerTable.hand)
+            //{
+            //    foreach(Card i in DealerOrPlayer)
+            //    {
+
+            //    }    
+            //}
+
+
+            return cards.GroupBy(card => card.rank).Count(group => group.Count() == 2) == 1;
+        }
+
+        bool checkTwoPair(List<Card> DealerOrPlayer)
+        {
+            List<Card> cards = new List<Card>();
+            cards.AddRange(DealerOrPlayer);
+            cards.AddRange(pokerTable.hand);
+
+            //see if there are 2 lots of exactly 2 cards card the same rank.
+            return cards.GroupBy(card => card.rank).Count(group => group.Count() >= 2) == 2;
+        }
+
+        bool checkTrips(List<Card> DealerOrPlayer)
+        {
+            List<Card> cards = new List<Card>();
+            cards.AddRange(DealerOrPlayer);
+            cards.AddRange(pokerTable.hand);
+
+            //see if exactly 3 cards card the same rank.
+            return cards.GroupBy(card => card.rank).Any(group => group.Count() == 3);
+        }
+
+        bool checkStraight(List<Card> DealerOrPlayer)
+        {
+            List<Card> cards = new List<Card>();
+            cards.AddRange(DealerOrPlayer);
+            cards.AddRange(pokerTable.hand);
+
+            //helping variable
+            List<Card> listCards = new List<Card>();
+            int highestRank = 0;
+
+            //// order by decending to see order
+            //var cardsInOrder = cards.OrderByDescending(a => a.rank).ToList();
+            //// check for ace as can be high and low
+            //if (cardsInOrder.First().rank.ToString() == "A")
+            //{
+            //    // check if straight with ace has has 2 values
+            //    bool highStraight = cards.Where(a => a.rank.ToString() == "K" || a.rank.ToString() == "Q" || a.rank.ToString() == "J" || a.rank.ToString() == "10").Count() == 4;
+            //    bool lowStraight = cards.Where(a => a.rank.ToString() == "2" || a.rank.ToString() == "3" || a.rank.ToString() == "4" || a.rank.ToString() == "5").Count() == 4;
+            //    // return true if straight with ace
+            //    if (lowStraight == true || highStraight == true)
+            //    {
+            //        return true;
+            //    }
+            //}
+            //else
+            //{
+            //    // check for straight here
+            //    return true;
+            //}
+            //// no straight if reached here.
+            //return false;
+
+            //for(int i  = 0; i<cards.Count;)
+            //{
+
+
+            //find highest rank card
+            foreach (Card c in cards)
             {
-                highestRank = (int) c.rank;
+                if ((int)c.rank > highestRank)
+                {
+                    highestRank = (int)c.rank;
+                }
+            }
+
+            foreach (Card c in cards)
+            {
+                if ((int)c.rank == highestRank - 1)
+                {
+                    listCards.Add(c);
+                    highestRank--;
+                }
+            }
+
+            return listCards.Count >= 5;
+
+        }
+
+        bool checkFlush(List<Card> DealerOrPlayer)
+        {
+            List<Card> cards = new List<Card>();
+            cards.AddRange(DealerOrPlayer);
+            cards.AddRange(pokerTable.hand);
+
+            //see if 5 or more cards card the same rank.
+            if (DealerOrPlayer[0] == DealerOrPlayer[1] &&
+                cards.GroupBy(card => card.suit).Count(group => group.Count() >= 5) == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
 
-        foreach (Card c in cards)
+        bool checkFullHouse(List<Card> DealerOrPlayer)
         {
-            if ((int) c.rank == highestRank - 1)
+            List<Card> cards = new List<Card>();
+            cards.AddRange(DealerOrPlayer);
+            cards.AddRange(pokerTable.hand);
+
+            // check if trips and pair is true
+            return isTherePair(cards) && checkTrips(cards);
+        }
+
+        bool checkQuads(List<Card> DealerOrPlayer)
+        {
+            List<Card> cards = new List<Card>();
+            cards.AddRange(DealerOrPlayer);
+            cards.AddRange(pokerTable.hand);
+
+            //see if exactly 4 cards card the same rank.
+            return cards.GroupBy(card => card.rank).Any(group => group.Count() == 4);
+        }
+
+        bool checkStraightFlush(List<Card> DealerOrPlayer)
+        {
+            List<Card> cards = new List<Card>();
+            cards.AddRange(DealerOrPlayer);
+            cards.AddRange(pokerTable.hand);
+
+            // check if flush and straight are true.
+            return checkFlush(DealerOrPlayer) && checkStraight(DealerOrPlayer);
+        }
+
+        public async void gameOver(StackLayout stack, Grid grid, bool winDealer, int bet, Label label, bool poker = false)
+        {
+            //rotate cards
+
+            if (poker == true && dealer.hand.Count != 0)
             {
-                listCards.Add(c);
-                highestRank--;
+                Card card = dealer.hand[0];
+                Card card1 = dealer.hand[1];
+                dealer.removeAll();
+                dealer.addOneCardForP(card, stack, grid, true, false);
+                dealer.addOneCardForP(card1, stack, grid, true, false);
             }
-        }
-
-        return listCards.Count >= 5;
-
-    }
-
-    bool CheckFlush(List<Card> DealerOrPlayer)
-    {
-        List<Card> cards = new List<Card>();
-        cards.AddRange(DealerOrPlayer);
-        cards.AddRange(pokerTable.hand);
-
-        //see if 5 or more cards card the same rank.
-        if (DealerOrPlayer[0] == DealerOrPlayer[1] &&
-            cards.GroupBy(card => card.suit).Count(group => group.Count() >= 5) == 1)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-
-    bool CheckFullHouse(List<Card> DealerOrPlayer)
-    {
-        List<Card> cards = new List<Card>();
-        cards.AddRange(DealerOrPlayer);
-        cards.AddRange(pokerTable.hand);
-
-        // check if trips and pair is true
-        return IsTherePair(cards) && CheckTrips(cards);
-    }
-
-    bool CheckQuads(List<Card> DealerOrPlayer)
-    {
-        List<Card> cards = new List<Card>();
-        cards.AddRange(DealerOrPlayer);
-        cards.AddRange(pokerTable.hand);
-
-        //see if exactly 4 cards card the same rank.
-        return cards.GroupBy(card => card.rank).Any(group => group.Count() == 4);
-    }
-
-    bool CheckStraightFlush(List<Card> DealerOrPlayer)
-    {
-        List<Card> cards = new List<Card>();
-        cards.AddRange(DealerOrPlayer);
-        cards.AddRange(pokerTable.hand);
-
-        // check if flush and straight are true.
-        return CheckFlush(DealerOrPlayer) && CheckStraight(DealerOrPlayer);
-    }
-
-    public async void GameOver(StackLayout stack, Grid grid, bool winDealer, int bet, Label label, bool poker = false)
-    {
-        //rotate cards
-
-        if (poker == true && dealer.hand.Count != 0)
-        {
-            Card card = dealer.hand[0];
-            Card card1 = dealer.hand[1];
-            dealer.RemoveAll();
-            dealer.AddOneCardForP(card, stack, grid, true, false);
-            dealer.AddOneCardForP(card1, stack, grid, true, false);
-        }
 
 
 
-        Label l = new Label();
-        l.FontSize = 40;
-        l.VerticalOptions = LayoutOptions.Center;
-        l.HorizontalOptions = LayoutOptions.Center;
+            Label l = new Label();
+            l.FontSize = 40;
+            l.VerticalOptions = LayoutOptions.Center;
+            l.HorizontalOptions = LayoutOptions.Center;
 
-        if (winDealer == true)
-        {
-            l.Text = "Game over";
-            l.TextColor = Color.Red;
-            user.AddMoney = user.AddMoney - bet;
-            stack.Children.Add(l);
-            SetMoney(label);
-        }
-        else
-        {
-            l.Text = "You win";
-            l.TextColor = Color.Blue;
-            stack.Children.Add(l);
-            user.AddMoney = user.AddMoney + bet;
-            SetMoney(label);
-        }
-
-        //this make new game
-
-        //if (User.AddMoney < 0)
-        //{
-        //    stack.Children.Remove(l);
-        //    return;
-        //}
-
-        //enabeld all elements
-        foreach (var v in stack.Children)
-        {
-            if (v != l)
+            if (winDealer == true)
             {
-                v.IsEnabled = false;
+                l.Text = "Game over";
+                l.TextColor = Color.Red;
+                user.addMoney = user.addMoney - bet;
+                stack.Children.Add(l);
+                setMoney(label);
             }
+            else
+            {
+                l.Text = "You win";
+                l.TextColor = Color.Blue;
+                stack.Children.Add(l);
+                user.addMoney = user.addMoney + bet;
+                setMoney(label);
+            }
+
+            //this make new game
+
+            //if (User.addMoney < 0)
+            //{
+            //    stack.Children.Remove(l);
+            //    return;
+            //}
+
+            //enabeld all elements
+            foreach (var v in stack.Children)
+            {
+                if (v != l)
+                {
+                    v.IsEnabled = false;
+                }
+            }
+
+
+
+            await Task.Delay(3000);
+
+            makeNew(stack, grid, l, poker);
         }
 
+        public void setMoney(Label label)
+        {
+            label.Text = "Tokens: " + user.addMoney;
 
-
-        await Task.Delay(3000);
-
-        makeNew(stack, grid, l, poker);
-    }
-
-        public void SetMoney(Label label)
-    {
-        label.Text = "Tokens: " + user.AddMoney;
-
-    }
+        }
 
         void makeNew(StackLayout stack, Grid grid, Label l, bool poker)
         {
             stack.Children.Remove(l);
             grid.Children.Clear();
 
-            if (user.AddMoney > 0)
+            if (user.addMoney > 0)
             {
                 if (poker == true)
                 {
-                    player.RemoveAll();
-                    dealer.RemoveAll();
-                    pokerTable.RemoveAll();
-                    dealer.AddP(stack, grid);
-                    dealer.AddP(stack, grid);
+                    player.removeAll();
+                    dealer.removeAll();
+                    pokerTable.removeAll();
+                   // dealer.addP(stack, grid, deck);
+                    addCard2Hand(stack, grid, deck,"dealer");
 
-                    pokerTable.AddP(stack, grid);
-                    pokerTable.AddP(stack, grid);
-                    pokerTable.AddP(stack, grid);
+                   // dealer.addP(stack, grid, deck);
+                    addCard2Hand(stack, grid, deck, "dealer");
 
-                    player.Add(stack, grid);
-                    player.Add(stack, grid);
+                    //pokerTable.addP(stack, grid, deck);
+                    //pokerTable.addP(stack, grid, deck);
+                   // pokerTable.addP(stack, grid, deck);
+                    addCard2Hand(stack, grid, deck, "table");
+                    addCard2Hand(stack, grid, deck, "table");
+                    addCard2Hand(stack, grid, deck, "table");
+                    //player.add(stack, grid, deck);
+                    //player.add(stack, grid, deck);
+                    addCard2Hand(stack, grid, deck, "player");
+                    addCard2Hand(stack, grid, deck, "player");
                 }
 
             }
@@ -442,7 +448,29 @@ namespace Bingo_Casino
                 }
             }
         }
+        public void addCard2Hand( StackLayout stack, Grid grid, Deck deck, string test = "player")
+        {
+            Card tempCard = deck.deal();
+            switch ((string)test)
+            {
+                case "player":
+                    player.addOneCardForP(tempCard, stack, grid, false, false);
+                    deck.removeCard(tempCard);
+                    break;
 
+                case "dealer":
+                    dealer.addOneCardForP(tempCard, stack, grid, true, false);
+                    deck.removeCard(tempCard);
+                    break;
+
+                case "table":
+                    pokerTable.addOneCardForP(tempCard, stack, grid, false, true);
+                    deck.removeCard(tempCard);
+                    break;
+            }
+
+
+        }
 
     }
 }

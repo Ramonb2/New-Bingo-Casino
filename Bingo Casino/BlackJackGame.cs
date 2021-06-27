@@ -8,15 +8,15 @@ namespace Bingo_Casino
 {
     class BlackJackGame
     {
-        private Deck deck = new Deck();
+        public Deck deck = new Deck();
         public BlackJackPlayer player;
         public Dealer dealer;
         public User user = new User();
 
         public BlackJackGame()
         {
-            dealer = new Dealer(deck);
-            player = new BlackJackPlayer(deck);
+            dealer = new Dealer();
+            player = new BlackJackPlayer();
         }
         public async void GameOver(StackLayout stack, Grid grid,int bet, bool winDealer, Label label)
         {
@@ -31,7 +31,7 @@ namespace Bingo_Casino
             {
                 l.Text = "The dealer has won Game over";
                 l.TextColor = Color.Red;
-                user.AddMoney = user.AddMoney - bet;
+                user.addMoney = user.addMoney - bet;
                 SetMoney(label);
                 stack.Children.Add(l);
             }
@@ -40,7 +40,7 @@ namespace Bingo_Casino
                 l.Text = "You win";
 
                 l.TextColor = Color.Blue;
-                user.AddMoney = user.AddMoney + bet;
+                user.addMoney = user.addMoney + bet;
                 SetMoney(label);
                 stack.Children.Add(l);
             }
@@ -58,11 +58,11 @@ namespace Bingo_Casino
 
             stack.Children.Remove(l);
             grid.Children.Clear();
-            player.RemoveAll();
-            dealer.RemoveAll();
-            dealer.Add(stack, grid);
-            player.Add(stack, grid);
-            player.Add(stack, grid);
+            player.removeAll();
+            dealer.removeAll();
+            dealer.add(stack, grid, deck); //stackL, grid, true, gameLaunch.blackJackGame.deck
+            player.add(stack, grid, deck);
+            player.add(stack, grid, deck);
 
             //unabeld all elements
             foreach (var v in stack.Children)
@@ -75,7 +75,7 @@ namespace Bingo_Casino
         }
                 public void SetMoney(Label label)
     {
-        label.Text = "Tokens: " + user.AddMoney;
+        label.Text = "Tokens: " + user.addMoney;
 
     }
         public void CheckIfSomeoneWinForStep(StackLayout stack, Grid grid, int bet, Label label)

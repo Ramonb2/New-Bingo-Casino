@@ -112,7 +112,12 @@ namespace Bingo_Casino
 
         }
 
-        public Card Deal()
+        public void removeCard(Card card)
+        {
+            cards.Remove(card);
+        }
+
+        public Card deal()
         {
             Card firstCard;
             if (cards.Count == 0)
@@ -127,9 +132,7 @@ namespace Bingo_Casino
             return firstCard;
         }
 
-
-
-        List<Card> GetDeck()
+        List<Card> getDeck()
         {
             return cards;
         }

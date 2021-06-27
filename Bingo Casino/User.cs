@@ -19,7 +19,7 @@ namespace Bingo_Casino
             set { ursname = value; }
         }
 
-        public int AddMoney
+        public int addMoney
         {
             get { return (int)money; }
             set { money = value; }

@@ -11,18 +11,16 @@ namespace Bingo_Casino {
 class PokerPlayer : Hand
     {
         private User user = new User();
-        private Deck deck;
 
-        public PokerPlayer(Deck deck)
+        public void add(StackLayout stack, Grid grid , Deck deck)
         {
-            this.deck = deck;
-        }
-        public void Add(StackLayout stack, Grid grid)
-        {
-            AddOneCardForP(deck.Deal(), stack, grid, false, false);
+            Card tempCard = deck.deal();
+            addOneCardForP(tempCard, stack, grid,false, false);
+            deck.removeCard(tempCard);
+
         }
 
-        public void RemoveAll()
+        public void removeAll()
         {
             hand.Clear();
             cardsRank = 0;

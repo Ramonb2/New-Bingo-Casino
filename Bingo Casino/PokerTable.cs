@@ -12,16 +12,15 @@ namespace Bingo_Casino
 {
     class PokerTable : Hand
     {
-        private Deck deck;
-        public PokerTable(Deck deck)
+
+        public void addP(StackLayout stack, Grid grid, Deck deck)
         {
-            this.deck = deck;
+            Card tempCard = deck.deal();
+            addOneCardForP(tempCard, stack, grid, false, true);
+            deck.removeCard(tempCard);
+
         }
-        public void AddP(StackLayout stack, Grid grid)
-        {
-            AddOneCardForP(deck.Deal(), stack, grid, false, true);
-        }
-        public void RemoveAll()
+        public void removeAll()
         {
             hand.Clear();
             cardsRank = 0;

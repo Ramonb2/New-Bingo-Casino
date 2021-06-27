@@ -7,35 +7,39 @@ namespace Bingo_Casino
 {
     class Dealer :Hand
     {
-        protected Deck deck;
-        public Dealer(Deck deck)
+
+        public void add(StackLayout stack, Grid grid, Deck deck)
         {
-            this.deck = deck;
-        }
-        public void Add(StackLayout stack, Grid grid)
-        {
-            AddOneCard(deck.Deal(), stack, grid, true);
+            Card tempCard = deck.deal();
+            addOneCard(deck.deal(), stack, grid, true);
+
         }
 
-        public void RemoveAll()
+        public void removeAll()
         {
             hand.Clear();
             cardsRank = 0;
         }
-        public void AddP(StackLayout stack, Grid grid, bool hide = true)
+        public void addP(StackLayout stack, Grid grid, Deck deck, bool hide = true)
         {
-            AddOneCardForP(deck.Deal(), stack, grid, true, false);
+            Card tempCard = deck.deal();
+            addOneCardForP(tempCard, stack, grid, true, false);
+            deck.removeCard(tempCard);
+            
         }
-        public void AddBL(StackLayout stack, Grid grid, bool forStep)
+        public void addBL(StackLayout stack, Grid grid, bool forStep, Deck deck)
         {
-            AddOneCardForBL(deck.Deal(), stack, grid, true);
+            Card tempCard = deck.deal();
+            addOneCardForBL(tempCard, stack, grid, true);
+            deck.removeCard(tempCard);
             while (cardsRank <= 17 && forStep == true)
             {
-                AddOneCardForBL(deck.Deal(), stack, grid, true);
+                Card tempCard2 = deck.deal();
+                addOneCardForBL(tempCard2, stack, grid, true);
+                deck.removeCard(tempCard2);
             }
+
         }
-
-
 
     }
 }

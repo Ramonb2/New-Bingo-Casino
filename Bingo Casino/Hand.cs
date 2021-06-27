@@ -27,14 +27,15 @@ namespace Bingo_Casino
             return cardsRank;
         }
 
-        public void AddOneCardForP(Card card, StackLayout stack, Grid grid, bool dealer, bool midle)
+        public void addOneCardForP(Card card, StackLayout stack, Grid grid, bool dealer, bool middle)
         {
-            if (midle == true && hand.Count >= 5)
+            if (middle == true && hand.Count >= 5)
             {
                 return;
             }
 
             hand.Add(card);
+
 
             Suit s = card.suit;
             Rank r = card.rank;
@@ -92,7 +93,7 @@ namespace Bingo_Casino
             {
                 translateY = stack.Height / 6 * 4;
             }
-            if (midle == true)
+            if (middle == true)
             {
                 translateY = (stack.Height / 6) * 2;
                 translateX = translateX - (int)(stack.Height * 0.15);
@@ -104,7 +105,7 @@ namespace Bingo_Casino
 
             grid.Children.Add(m);
         }
-        public void AddOneCard(Card card, StackLayout stack, Grid grid, bool dealer)
+        public void addOneCard(Card card, StackLayout stack, Grid grid, bool dealer)
         {
             if (dealer == true && cardsRank > 17)
             {
@@ -217,7 +218,7 @@ namespace Bingo_Casino
             grid.Children.Add(m);
         }
 
-        public void Sort()
+        public void sort()
         {
             List<Card> hand1 = new List<Card>();
 
@@ -253,7 +254,7 @@ namespace Bingo_Casino
 
 
 
-        public void AddOneCardForBL(Card card, StackLayout stack, Grid grid, bool dealer)
+        public void addOneCardForBL(Card card, StackLayout stack, Grid grid, bool dealer)
         {
             //add ranks to cardsRank
             if ((int)card.rank == 1 && dealer == false)
@@ -345,7 +346,7 @@ namespace Bingo_Casino
             m.TranslateTo(translateX, translateY, 300); grid.Children.Add(m);
         }
 
-        public void AddCards(List<Card> cards)
+        public void addCards(List<Card> cards)
         {
             foreach (Card c in cards)
             {

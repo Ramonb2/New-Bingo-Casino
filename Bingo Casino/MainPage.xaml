@@ -22,9 +22,9 @@ xmlns:helpers="clr-namespace:Bingo_Casino.Helpers"
         <Label x:Name="HeightScore" Text="Your height score was: " TextColor="Red" FontSize="20" IsVisible="false" HorizontalOptions="Center" VerticalOptions="Center"/>
         <Label x:Name="lblSettings" Text="Settings" TextColor="White" BackgroundColor="Green" FontSize="30" IsVisible="false" HorizontalOptions="Center" VerticalOptions="Center"/>
         <Button x:Name="Sound" Text="Sound On" Clicked="Sound_Clicked" Margin="200,0" HeightRequest="50" BackgroundColor="Green" FontSize="15" TextColor="White" IsVisible="false"/>
-        <Button x:Name="Tokens" Text="Buy Tokens" VerticalOptions="Center" Margin="200,0" HeightRequest="50" TextColor="White" BackgroundColor="Green" FontSize="15" IsVisible="false"/>
-        <Button x:Name="Help" Text="Help" Margin="200,0" HeightRequest="50" TextColor="White" BackgroundColor="Green" FontSize="15" IsVisible="false"/>
-        <Button x:Name="Info" Text="Info" Margin="200,0" HeightRequest="50" BackgroundColor="Green" FontSize="15" TextColor="White" IsVisible="false"/>
+        <Button x:Name="Tokens" Clicked="token_Clicked" Text="Buy Tokens" VerticalOptions="Center" Margin="200,0" HeightRequest="50" TextColor="White" BackgroundColor="Green" FontSize="15" IsVisible="false"/>
+        <Button x:Name="Help" Clicked="help_Clicked" Text="Help" Margin="200,0" HeightRequest="50" TextColor="White" BackgroundColor="Green" FontSize="15" IsVisible="false"/>
+        <Button x:Name="Info" Clicked="info_Clicked" Text="Info" Margin="200,0" HeightRequest="50" BackgroundColor="Green" FontSize="15" TextColor="White" IsVisible="false"/>
         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
 
             <Button x:Name="hit" Clicked="hit_Clicked" WidthRequest="50" Text="Hit" BackgroundColor="White" VerticalOptions="Center" FontSize="15" TextColor="Black" IsVisible="false"/>
@@ -40,34 +40,16 @@ xmlns:helpers="clr-namespace:Bingo_Casino.Helpers"
             <Button x:Name="Play" Clicked="Play_Clicked" Text="Play" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center" FontSize="15" TextColor="Black" IsVisible="false"/>
 
             <Button x:Name="Play1" Clicked="Play1_Clicked" Text="Play" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center" FontSize="15" TextColor="Black" IsVisible="false"/>
-            <!--<Frame x:Name="HowMuch" IsVisible="false" WidthRequest="200" HorizontalOptions="Center">
-
-
-
-<Entry Placeholder="How many tokens to game"/>
-
-</Frame>-->
 
             <Label x:Name="lblHowMuch" Text="How many tokens to the game:" IsVisible="false" FontSize="20"></Label>
             <Entry x:Name="HowMuch" IsPassword="False" IsVisible="false"/>
 
 
-
         </StackLayout>
-
-
-
-
         <Label x:Name="label" Text="Dealer" VerticalOptions="Start" FontSize="30" HorizontalOptions="Center" IsVisible="false"/>
-
-
-
-        <!--<Image Source="{helpers:ImageResource Bingo_Casino.Assets.Images.cards.imageonline-co-split-image (1).png }" HeightRequest="300" WidthRequest="300" />-->
         <Grid x:Name="grid">
 
         </Grid>
-
-
 
 
     </StackLayout>
