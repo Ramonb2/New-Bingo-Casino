@@ -1,16 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Xml.Linq;
 using Xamarin.Forms;
-using System.Windows;
-using Xamarin.Forms.PlatformConfiguration;
-using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
+
+
 
 namespace Bingo_Casino
 {
     public partial class MainPage : ContentPage
     {
+
         GameLaunch gameLaunch = new GameLaunch();
 
         public MainPage()
@@ -18,11 +16,9 @@ namespace Bingo_Casino
             InitializeComponent();
 
         }
-
+        //this add image
 
         //Homepage
-
-
         private void BlackJack_Clicked(object sender, EventArgs e)
         {
             BlackJack.IsVisible = false;
@@ -32,55 +28,26 @@ namespace Bingo_Casino
             label.IsVisible = false;
             lblHowMuch.IsVisible = true;
             Back.IsVisible = true;
-
-            // start the game
             Play.IsVisible = true;
             HowMuch.IsVisible = true;
-
-
         }
 
-        private void Play_Clicked(object sender, EventArgs e)
-        {
-            if (HowMuch.Text != null)
-            {
-
-                Back.IsVisible = true;
-                BlackJack.IsVisible = false;
-                Poker.IsVisible = false;
-                Settings.IsVisible = false;
-                hit.IsVisible = true;
-                stand.IsVisible = true;
-                one.IsVisible = true;
-                eleven.IsVisible = true;
-                eleven.IsEnabled = false;
-                one.IsEnabled = true;
-                lbl1or11.IsVisible = true;
-                label.IsVisible = true;
-                HowMuch.IsVisible = false;
-                Play.IsVisible = false;
-                lblHowMuch.IsVisible = false;
-                gameLaunch.blackJackGame.player.HowMuchForA = 11;
-
-
-
-                StartBL();
-            }
-
-        }
 
 
         private void Poker_Clicked(object sender, EventArgs e)
         {
-            Back.IsVisible = true;
             BlackJack.IsVisible = false;
             Poker.IsVisible = false;
             Settings.IsVisible = false;
-
-
-
-
+            eleven.IsEnabled = false;
+            label.IsVisible = false;
+            lblHowMuch.IsVisible = true;
+            Back.IsVisible = true;
+            Play1.IsVisible = true;
+            HowMuch.IsVisible = true;
         }
+
+
 
         private void Settings_Clicked(object sender, EventArgs e)
         {
@@ -97,22 +64,9 @@ namespace Bingo_Casino
             Info.IsVisible = true;
             lblSettings.IsVisible = true;
 
-
-
         }
 
-        private void info_Clicked(object sender, EventArgs e)
-        {
-            DisplayAlert("Info", "What do you want to know", "OK");
-        }
-        private void help_Clicked(object sender, EventArgs e)
-        {
-            DisplayAlert("Help", "Help me plz !!!", "OK");
-        }
-        private void token_Clicked(object sender, EventArgs e)
-        {
-            DisplayAlert("Buy Tokens", "https://paypal.me/NerusDev?", "OK");
-        }
+
 
         private void Back_Clicked(object sender, EventArgs e)
         {
@@ -124,6 +78,8 @@ namespace Bingo_Casino
             hit.IsVisible = false;
             stand.IsVisible = false;
 
+
+
             Sound.IsVisible = false;
             Tokens.IsVisible = false;
             Help.IsVisible = false;
@@ -134,16 +90,37 @@ namespace Bingo_Casino
             lbl1or11.IsVisible = false;
             one.IsVisible = false;
             eleven.IsVisible = false;
+            Next.IsVisible = false;
+            Play1.IsVisible = false;
+            Bet.IsVisible = false;
+            fold.IsVisible = false;
+            MoneyInGame.IsVisible = false;
+
+
 
             grid.Children.Clear();
+
+
 
             gameLaunch.blackJackGame.player.RemoveAll();
             gameLaunch.blackJackGame.dealer.RemoveAll();
 
+
+
+            gameLaunch.pokerGame.player.RemoveAll();
+            gameLaunch.pokerGame.pokerTable.RemoveAll();
+            gameLaunch.pokerGame.dealer.RemoveAll();
+
+
+
         }
 
 
+
+
         //Settings
+
+
 
         private void Sound_Clicked(object sender, EventArgs e)
         {
@@ -160,44 +137,40 @@ namespace Bingo_Casino
         }
 
 
+
         private void hit_Clicked(object sender, EventArgs e)
         {
-            gameLaunch.blackJackGame.player.Add(stackL, grid);
-            gameLaunch.blackJackGame.dealer.Add(stackL, grid);
-            gameLaunch.blackJackGame.CheckIfSomeoneWinForHit(stackL, grid, Math.Abs(int.Parse(HowMuch.Text)), lblUserTokens);
             gameLaunch.setting.sound("zapsplat_leisure_playing_cards_dealing_table_001_20483 (mp3cut.net) (2).mp3");
+            gameLaunch.blackJackGame.player.Add(stackL, grid);
+            gameLaunch.blackJackGame.CheckIfSomeoneWinForHit(stackL, grid, Math.Abs(int.Parse(HowMuch.Text)), lblUserTokens);
+            //gameLaunch.SetMoney(lblUserTokens);
+
+
+
+            if (gameLaunch.user.AddMoney < 0)
+            {
+                loseAllGame();
+            }
+
+
 
         }
 
-        private async void stand_Clicked(object sender, EventArgs e)
+
+
+        private void stand_Clicked(object sender, EventArgs e)
         {
-            while (gameLaunch.blackJackGame.dealer.get_cardRank() < 17)
+            gameLaunch.setting.sound("zapsplat_leisure_playing_cards_dealing_table_001_20483 (mp3cut.net) (2).mp3");
+            gameLaunch.blackJackGame.dealer.AddBL(stackL, grid, true);
+            gameLaunch.blackJackGame.CheckIfSomeoneWinForStep(stackL, grid, Math.Abs(int.Parse(HowMuch.Text)), lblUserTokens);
+            //gameLaunch.SetMoney(lblUserTokens);
+            if (gameLaunch.user.AddMoney < 0)
             {
-                gameLaunch.blackJackGame.dealer.Add(stackL, grid);
-                if (gameLaunch.blackJackGame.player.cardsRank < gameLaunch.blackJackGame.dealer.get_cardRank() && gameLaunch.blackJackGame.dealer.get_cardRank() <= 21)
-                {
-                    gameLaunch.blackJackGame.GameOver(stackL, grid, Math.Abs(int.Parse(HowMuch.Text)),  true, lblUserTokens);
-                    return;
-
-                }
-
-                gameLaunch.setting.sound("zapsplat_leisure_playing_cards_dealing_table_001_20483 (mp3cut.net) (2).mp3");
-                await Task.Delay(1000);
-
+                loseAllGame();
             }
-            if (gameLaunch.blackJackGame.player.cardsRank < gameLaunch.blackJackGame.dealer.get_cardRank() && gameLaunch.blackJackGame.dealer.get_cardRank() == 17)
-            {
-                gameLaunch.blackJackGame.GameOver(stackL, grid, Math.Abs(int.Parse(HowMuch.Text)), true, lblUserTokens);
-                return;
-
-            }
-            else
-            {
-                gameLaunch.blackJackGame.CheckIfSomeoneWinForStep(stackL, grid, Math.Abs(int.Parse(HowMuch.Text)), lblUserTokens);
-                return;
-            }
-
         }
+
+
 
         private void one_Clicked(object sender, EventArgs e)
         {
@@ -205,6 +178,8 @@ namespace Bingo_Casino
             one.IsEnabled = false;
             eleven.IsEnabled = true;
         }
+
+
 
         private void eleven_Clicked(object sender, EventArgs e)
         {
@@ -215,13 +190,173 @@ namespace Bingo_Casino
 
 
 
+
+
         public void StartBL()
         {
-            gameLaunch.blackJackGame.dealer.Add(stackL, grid);
+            gameLaunch.blackJackGame.dealer.AddBL(stackL, grid, false);
             gameLaunch.blackJackGame.player.Add(stackL, grid);
             gameLaunch.blackJackGame.player.Add(stackL, grid);
         }
+
+
+        public void StartP()
+        {
+            gameLaunch.pokerGame.player.Add(stackL, grid);
+            gameLaunch.pokerGame.player.Add(stackL, grid);
+            gameLaunch.pokerGame.dealer.AddP(stackL, grid);
+            gameLaunch.pokerGame.dealer.AddP(stackL, grid);
+            gameLaunch.pokerGame.pokerTable.AddP(stackL, grid);
+            gameLaunch.pokerGame.pokerTable.AddP(stackL, grid);
+            gameLaunch.pokerGame.pokerTable.AddP(stackL, grid);
+        }
+
+        private void Next_Clicked(object sender, EventArgs e)
+        {
+            gameLaunch.setting.sound("zapsplat_leisure_playing_cards_dealing_table_001_20483 (mp3cut.net) (2).mp3");
+            gameLaunch.pokerGame.pokerTable.AddP(stackL, grid);
+            gameLaunch.pokerGame.CheckIfSomeoneWinForPoker(stackL, grid, gameLaunch.pokerGame.totalBet, lblUserTokens);
+            if (gameLaunch.user.AddMoney < 0)
+            {
+                loseAllGame();
+            }
+        }
+
+
+
+
+        private void Play_Clicked(object sender, EventArgs e)
+        {
+            if (HowMuch.Text != null)
+            {
+                Back.IsVisible = true;
+                BlackJack.IsVisible = false;
+                Poker.IsVisible = false;
+                Settings.IsVisible = false;
+                hit.IsVisible = true;
+                stand.IsVisible = true;
+                one.IsVisible = true;
+                eleven.IsVisible = true;
+                eleven.IsEnabled = false;
+                one.IsEnabled = true;
+                lbl1or11.IsVisible = true;
+                label.IsVisible = true;
+                HowMuch.IsVisible = false;
+                Play.IsVisible = false;
+                lblHowMuch.IsVisible = false;
+                gameLaunch.blackJackGame.player.HowMuchForA = 11;
+                StartBL();
+            }
+
+        }
+
+        private void Play1_Clicked(object sender, EventArgs e)
+        {
+            int i;
+            if (HowMuch.Text != null && int.TryParse(HowMuch.Text, out i) == true)
+            {
+                Back.IsVisible = true;
+                BlackJack.IsVisible = false;
+                Poker.IsVisible = false;
+                Settings.IsVisible = false;
+                Next.IsVisible = true;
+                HowMuch.IsVisible = false;
+                fold.IsVisible = true;
+                Play1.IsVisible = false;
+                lblHowMuch.IsVisible = false;
+                Bet.IsVisible = true;
+                Bet.Text = "Bet" + ": " + i;
+                MoneyInGame.IsVisible = true;
+                MoneyInGame.Text = "Your money in game:" + gameLaunch.pokerGame.totalBet.ToString();
+                StartP();
+            }
+
+        }
+
+
+
+
+        private void Bet_Clicked(object sender, EventArgs e)
+        {
+            gameLaunch.setting.sound("zapsplat_leisure_playing_cards_dealing_table_001_20483 (mp3cut.net) (2).mp3");
+            gameLaunch.pokerGame.pokerTable.AddP(stackL, grid);
+
+
+
+            gameLaunch.pokerGame.totalBet = gameLaunch.pokerGame.totalBet + Math.Abs(int.Parse(HowMuch.Text));
+            gameLaunch.pokerGame.CheckIfSomeoneWinForPoker(stackL, grid, gameLaunch.pokerGame.totalBet, lblUserTokens);
+            MoneyInGame.Text = "Your money in game:" + gameLaunch.pokerGame.totalBet.ToString();
+
+
+
+            //when the money is on the 0
+            if (gameLaunch.user.AddMoney < 0)
+            {
+                loseAllGame();
+            }
+            //User.AddMoney = User.AddMoney - Math.Abs(int.Parse(HowMuch.Text));
+            //gameLaunch.SetMoney(lblUserTokens);
+        }
+
+
+
+        async void loseAllGame()
+        {
+            await Task.Delay(3000);
+            //same that is in the back
+            Back.IsVisible = false;
+            //BlackJack.IsVisible = true;
+            //Poker.IsVisible = true;
+            //Settings.IsVisible = true;
+            hit.IsVisible = false;
+            stand.IsVisible = false;
+
+
+
+            Sound.IsVisible = false;
+            Tokens.IsVisible = false;
+            Help.IsVisible = false;
+            Info.IsVisible = false;
+            lblSettings.IsVisible = false;
+            hit.IsVisible = false;
+            stand.IsVisible = false;
+            lbl1or11.IsVisible = false;
+            one.IsVisible = false;
+            eleven.IsVisible = false;
+            Next.IsVisible = false;
+            Play1.IsVisible = false;
+            Bet.IsVisible = false;
+            fold.IsVisible = false;
+            MoneyInGame.IsVisible = false;
+            label.IsVisible = false;
+            grid.Children.Clear();
+            gameLaunch.blackJackGame.player.RemoveAll();
+            gameLaunch.blackJackGame.dealer.RemoveAll();
+            gameLaunch.pokerGame.player.RemoveAll();
+            gameLaunch.pokerGame.pokerTable.RemoveAll();
+            gameLaunch.pokerGame.dealer.RemoveAll();
+            lblLoseGame.IsVisible = true;
+            HeightScore.IsVisible = true;
+            HeightScore.Text = "Your height score was: " + gameLaunch.user.HScore;
+            await Task.Delay(3000);
+            gameLaunch.user.AddMoney = 70;
+            //gameLaunch.SetMoney(lblUserTokens);
+            BlackJack.IsVisible = true;
+            Poker.IsVisible = true;
+            Settings.IsVisible = true;
+            lblLoseGame.IsVisible = false;
+            HeightScore.IsVisible = false;
+
+        }
+        private void fold_Clicked(object sender, EventArgs e)
+        {
+
+
+            gameLaunch.pokerGame.GameOver(stackL, grid, true, gameLaunch.pokerGame.totalBet, lblUserTokens, true);
+        }
     }
+
+
 
 
 }

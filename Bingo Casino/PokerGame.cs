@@ -9,14 +9,15 @@ using Xamarin.Forms;
 
 namespace Bingo_Casino
 {
-    public class PokerGame
+     class PokerGame : GameLaunch
     {
 
         public int totalBet = 10;
-        private Deck deck;
-        private PokerPlayer player;
-        private Dealer dealer;
-        private PokerTable pokerTable;
+        public Deck deck;
+        public PokerPlayer player;
+        public Dealer dealer;
+        public PokerTable pokerTable;
+        private User user;
 
         public PokerGame()
         {
@@ -24,8 +25,10 @@ namespace Bingo_Casino
             player = new PokerPlayer(deck);
             dealer = new Dealer(deck);
             pokerTable = new PokerTable(deck);
+            user = new User();
 
         }
+
         public void CheckIfSomeoneWinForPoker(StackLayout stack, Grid grid, int bet, Label label)
         {
             if (pokerTable.hand.Count == 5)
@@ -333,6 +336,83 @@ namespace Bingo_Casino
             return CheckFlush(DealerOrPlayer) && CheckStraight(DealerOrPlayer);
         }
 
+        public async void GameOver(StackLayout stack, Grid grid, bool winDealer, int bet, Label label, bool poker = false)
+        {
+            //rotate cards if (poker == true && Dealer.hand.Count != 0)
+            {
+                Card card = dealer.hand[0];
+                Card card1 = dealer.hand[1];
+                dealer.RemoveAll();
+                dealer.AddOneCardForP(card, stack, grid, true, false);
+                dealer.AddOneCardForP(card1, stack, grid, true, false);
+            }
+            Label l = new Label();
+            l.FontSize = 40;
+            l.VerticalOptions = LayoutOptions.Center;
+            l.HorizontalOptions = LayoutOptions.Center; if (winDealer == true)
+            {
+                l.Text = "Game over";
+                l.TextColor = Color.Red;
+                user.AddMoney = user.AddMoney - bet;
+                stack.Children.Add(l);
+                SetMoney(label);
+            }
+            else
+            {
+                l.Text = "You win";
+                l.TextColor = Color.Blue;
+                stack.Children.Add(l);
+                user.AddMoney = user.AddMoney + bet;
+                SetMoney(label);
+            } //this make new game //if (User.AddMoney < 0)
+            //{
+            // stack.Children.Remove(l);
+            // return;
+            //} //enabeld all elements
+            foreach (var v in stack.Children)
+            {
+                if (v != l)
+                {
+                    v.IsEnabled = false;
+                }
+            }
+            await Task.Delay(3000); makeNew(stack, grid, l, poker);
+        }
+        public void SetMoney(Label label)
+        {
+            label.Text = "Tokens: " + user.AddMoney;
 
-    }
+        }
+
+        void makeNew(StackLayout stack, Grid grid, Label l, bool poker)
+        {
+            stack.Children.Remove(l);
+            grid.Children.Clear();
+            if (user.AddMoney > 0)
+            {
+                if (poker == true)
+                {
+                    player.RemoveAll();
+                    dealer.RemoveAll();
+                    pokerTable.RemoveAll();
+                    dealer.AddP(stack, grid);
+                    dealer.AddP(stack, grid);
+
+
+
+                    pokerTable.AddP(stack, grid);
+                    pokerTable.AddP(stack, grid);
+                    pokerTable.AddP(stack, grid);
+
+
+
+                    player.Add(stack, grid);
+                    player.Add(stack, grid);
+                }
+
+            }
+
+
+        }
+        }
 }

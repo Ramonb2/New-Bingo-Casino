@@ -7,6 +7,11 @@ namespace Bingo_Casino
 {
     class BlackJackPlayer :Hand
     {
+        private Deck deck;
+        public BlackJackPlayer(Deck deck)
+        {
+            this.deck = deck;
+        }
 
         public void Add(StackLayout stack, Grid grid)
         {
@@ -17,6 +22,7 @@ namespace Bingo_Casino
         {
 
         }
+
 
         public void RemoveAll()
         {

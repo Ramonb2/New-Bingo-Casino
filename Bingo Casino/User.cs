@@ -8,6 +8,10 @@ namespace Bingo_Casino
     {
         string ursname;
         double money = 70;
+        public  int HScore { get; } = 70;
+        
+
+
 
         string getSetUrsname
         {

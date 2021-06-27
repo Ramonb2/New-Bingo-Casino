@@ -8,9 +8,16 @@ namespace Bingo_Casino
 {
     class BlackJackGame
     {
-        public BlackJackPlayer player = new BlackJackPlayer();
-        public Dealer dealer = new Dealer();
+        private Deck deck = new Deck();
+        public BlackJackPlayer player;
+        public Dealer dealer;
         public User user = new User();
+
+        public BlackJackGame()
+        {
+            dealer = new Dealer(deck);
+            player = new BlackJackPlayer(deck);
+        }
         public async void GameOver(StackLayout stack, Grid grid,int bet, bool winDealer, Label label)
         {
             //grid.Children.Clear();

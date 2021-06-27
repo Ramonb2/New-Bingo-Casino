@@ -19,7 +19,7 @@ class PokerPlayer : Hand
         }
         public void Add(StackLayout stack, Grid grid)
         {
-            AddOneCardForP(deck.deal(), stack, grid, false, false);
+            AddOneCardForP(deck.Deal(), stack, grid, false, false);
         }
 
         public void RemoveAll()

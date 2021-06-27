@@ -12,8 +12,9 @@ namespace Bingo_Casino
     class GameLaunch
     {
         public BlackJackGame blackJackGame = new BlackJackGame();
-        public PokerGame pockerGame = new PokerGame();
+        public PokerGame pokerGame = new PokerGame();
         public Setting setting = new Setting();
+        public User user = new User();
 
 
     }
