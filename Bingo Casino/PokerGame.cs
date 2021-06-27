@@ -81,13 +81,6 @@ namespace Bingo_Casino
                     cardsValueOfPlayer = (int)PokerCardsValue.straightFlush;
                 }
 
-
-
-
-
-
-
-
                 //cound value of dealer cards
                 if (isTherePair(dealer.hand) == true)
                 {
@@ -128,9 +121,6 @@ namespace Bingo_Casino
                 {
                     cardsValueOfDealer = (int)PokerCardsValue.straightFlush;
                 }
-
-
-
 
 
                 //who win
@@ -180,7 +170,6 @@ namespace Bingo_Casino
                     {
                         highestCardofDealer = 11;
                     }
-
 
 
                     if ((int)player.hand[0].rank + player.hand[1].rank <= (int)dealer.hand[0].rank + dealer.hand[1].rank)
@@ -348,6 +337,7 @@ namespace Bingo_Casino
                 Card card = dealer.hand[0];
                 Card card1 = dealer.hand[1];
                 dealer.removeAll();
+
                 dealer.addOneCardForP(card, stack, grid, true, false);
                 dealer.addOneCardForP(card1, stack, grid, true, false);
             }
@@ -410,7 +400,6 @@ namespace Bingo_Casino
         {
             stack.Children.Remove(l);
             grid.Children.Clear();
-
             if (user.addMoney > 0)
             {
                 if (poker == true)
@@ -418,22 +407,13 @@ namespace Bingo_Casino
                     player.removeAll();
                     dealer.removeAll();
                     pokerTable.removeAll();
-                   // dealer.addP(stack, grid, deck);
-                    addCard2Hand(stack, grid, deck,"dealer");
-
-                   // dealer.addP(stack, grid, deck);
-                    addCard2Hand(stack, grid, deck, "dealer");
-
-                    //pokerTable.addP(stack, grid, deck);
-                    //pokerTable.addP(stack, grid, deck);
-                   // pokerTable.addP(stack, grid, deck);
-                    addCard2Hand(stack, grid, deck, "table");
-                    addCard2Hand(stack, grid, deck, "table");
-                    addCard2Hand(stack, grid, deck, "table");
-                    //player.add(stack, grid, deck);
-                    //player.add(stack, grid, deck);
-                    addCard2Hand(stack, grid, deck, "player");
-                    addCard2Hand(stack, grid, deck, "player");
+                    addCard2Hand(stack, grid, "dealer");
+                    addCard2Hand(stack, grid, "dealer");
+                    addCard2Hand(stack, grid, "table");
+                    addCard2Hand(stack, grid, "table");
+                    addCard2Hand(stack, grid, "table");
+                    addCard2Hand(stack, grid, "player");
+                    addCard2Hand(stack, grid, "player");
                 }
 
             }
@@ -448,27 +428,27 @@ namespace Bingo_Casino
                 }
             }
         }
-        public void addCard2Hand( StackLayout stack, Grid grid, Deck deck, string test = "player")
+        public async void addCard2Hand(StackLayout stack, Grid grid, string test = "player")
         {
+
             Card tempCard = deck.deal();
+            deck.removeCard(tempCard);
             switch ((string)test)
             {
                 case "player":
                     player.addOneCardForP(tempCard, stack, grid, false, false);
-                    deck.removeCard(tempCard);
                     break;
 
                 case "dealer":
-                    dealer.addOneCardForP(tempCard, stack, grid, true, false);
-                    deck.removeCard(tempCard);
+                    dealer.addOneCardForP(tempCard, stack, grid, true, false,false);
                     break;
 
                 case "table":
                     pokerTable.addOneCardForP(tempCard, stack, grid, false, true);
-                    deck.removeCard(tempCard);
                     break;
             }
 
+            await Task.Delay(500);
 
         }
 

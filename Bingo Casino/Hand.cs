@@ -27,7 +27,7 @@ namespace Bingo_Casino
             return cardsRank;
         }
 
-        public void addOneCardForP(Card card, StackLayout stack, Grid grid, bool dealer, bool middle)
+        public void addOneCardForP(Card card, StackLayout stack, Grid grid, bool dealer, bool middle,bool showImage=true)
         {
             if (middle == true && hand.Count >= 5)
             {
@@ -39,14 +39,36 @@ namespace Bingo_Casino
 
             Suit s = card.suit;
             Rank r = card.rank;
+            string rank = r.ToString();
+            int image_number = (int)r;
+            switch (rank)
 
+            {
+                case "J":
+                    image_number = 10;
+                    break;
+                case "Q":
+                    image_number = 11;
+                    break;
+                case "K":
+                    image_number = 12;
+                    break;
+                case "A":
+                    image_number = 0;
+                    break;
 
+            }
+
+            if (!showImage)
+            {
+               image_number = 14;
+            }
             //add image
             Image m = new Image();
 
             var assembly = typeof(MainPage);
             string fileName = "";
-            string NameOfImage = "imageonline-co-split-image (" + ((int)r - 1) + ").png";
+            string NameOfImage = "imageonline-co-split-image (" + ((int)image_number) + ").png";
 
             switch ((int)s)
             {
@@ -275,11 +297,11 @@ namespace Bingo_Casino
             hand.Add(card); Suit s = card.suit;
             Rank r = card.rank;
             //add image
-            Image m = new Image(); 
+            Image m = new Image();
             var assembly = typeof(MainPage);
             string fileName = "";
-            string NameOfImage = "imageonline-co-split-image (" + ((int)r - 1) + ").png"; 
-            
+            string NameOfImage = "imageonline-co-split-image (" + ((int)r - 1) + ").png";
+
             switch ((int)s)
             {
                 case 1:

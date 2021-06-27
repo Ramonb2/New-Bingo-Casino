@@ -12,14 +12,6 @@ class PokerPlayer : Hand
     {
         private User user = new User();
 
-        public void add(StackLayout stack, Grid grid , Deck deck)
-        {
-            Card tempCard = deck.deal();
-            addOneCardForP(tempCard, stack, grid,false, false);
-            deck.removeCard(tempCard);
-
-        }
-
         public void removeAll()
         {
             hand.Clear();

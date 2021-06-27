@@ -115,6 +115,7 @@ namespace Bingo_Casino
         public void removeCard(Card card)
         {
             cards.Remove(card);
+            usedCards.Add(card);
         }
 
         public Card deal()
@@ -127,7 +128,7 @@ namespace Bingo_Casino
             }
 
             firstCard = cards[0];
-            cards.RemoveAt(0);
+            removeCard(firstCard);
 
             return firstCard;
         }

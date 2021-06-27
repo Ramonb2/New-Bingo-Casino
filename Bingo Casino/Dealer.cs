@@ -20,13 +20,6 @@ namespace Bingo_Casino
             hand.Clear();
             cardsRank = 0;
         }
-        public void addP(StackLayout stack, Grid grid, Deck deck, bool hide = true)
-        {
-            Card tempCard = deck.deal();
-            addOneCardForP(tempCard, stack, grid, true, false);
-            deck.removeCard(tempCard);
-            
-        }
         public void addBL(StackLayout stack, Grid grid, bool forStep, Deck deck)
         {
             Card tempCard = deck.deal();
