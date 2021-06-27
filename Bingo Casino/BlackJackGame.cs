@@ -32,12 +32,16 @@ namespace Bingo_Casino
                 l.Text = "The dealer has won Game over";
                 l.TextColor = Color.Red;
                 user.AddMoney = user.AddMoney - bet;
+                SetMoney(label);
                 stack.Children.Add(l);
             }
             else
             {
                 l.Text = "You win";
+
                 l.TextColor = Color.Blue;
+                user.AddMoney = user.AddMoney + bet;
+                SetMoney(label);
                 stack.Children.Add(l);
             }
 
@@ -69,7 +73,11 @@ namespace Bingo_Casino
                 }
             }
         }
+                public void SetMoney(Label label)
+    {
+        label.Text = "Tokens: " + user.AddMoney;
 
+    }
         public void CheckIfSomeoneWinForStep(StackLayout stack, Grid grid, int bet, Label label)
         {
             //if they crosed

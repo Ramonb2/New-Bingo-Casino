@@ -107,9 +107,9 @@ namespace Bingo_Casino
 
 
 
-            gameLaunch.pokerGame.player.RemoveAll();
-            gameLaunch.pokerGame.pokerTable.RemoveAll();
-            gameLaunch.pokerGame.dealer.RemoveAll();
+           gameLaunch.pokerGame.player.RemoveAll();
+           gameLaunch.pokerGame.pokerTable.RemoveAll();
+           gameLaunch.pokerGame.dealer.RemoveAll();
 
 
 
@@ -202,13 +202,13 @@ namespace Bingo_Casino
 
         public void StartP()
         {
-            gameLaunch.pokerGame.player.Add(stackL, grid);
-            gameLaunch.pokerGame.player.Add(stackL, grid);
-            gameLaunch.pokerGame.dealer.AddP(stackL, grid);
-            gameLaunch.pokerGame.dealer.AddP(stackL, grid);
-            gameLaunch.pokerGame.pokerTable.AddP(stackL, grid);
-            gameLaunch.pokerGame.pokerTable.AddP(stackL, grid);
-            gameLaunch.pokerGame.pokerTable.AddP(stackL, grid);
+        gameLaunch.pokerGame.player.Add(stackL, grid);
+          gameLaunch.pokerGame.player.Add(stackL, grid);
+         gameLaunch.pokerGame.dealer.AddP(stackL, grid);
+          gameLaunch.pokerGame.dealer.AddP(stackL, grid);
+         gameLaunch.pokerGame.pokerTable.AddP(stackL, grid);
+          gameLaunch.pokerGame.pokerTable.AddP(stackL, grid);
+          gameLaunch.pokerGame.pokerTable.AddP(stackL, grid);
         }
 
         private void Next_Clicked(object sender, EventArgs e)
@@ -279,13 +279,13 @@ namespace Bingo_Casino
         private void Bet_Clicked(object sender, EventArgs e)
         {
             gameLaunch.setting.sound("zapsplat_leisure_playing_cards_dealing_table_001_20483 (mp3cut.net) (2).mp3");
-            gameLaunch.pokerGame.pokerTable.AddP(stackL, grid);
+          gameLaunch.pokerGame.pokerTable.AddP(stackL, grid);
 
 
 
-            gameLaunch.pokerGame.totalBet = gameLaunch.pokerGame.totalBet + Math.Abs(int.Parse(HowMuch.Text));
-            gameLaunch.pokerGame.CheckIfSomeoneWinForPoker(stackL, grid, gameLaunch.pokerGame.totalBet, lblUserTokens);
-            MoneyInGame.Text = "Your money in game:" + gameLaunch.pokerGame.totalBet.ToString();
+          gameLaunch.pokerGame.totalBet = gameLaunch.pokerGame.totalBet + Math.Abs(int.Parse(HowMuch.Text));
+          gameLaunch.pokerGame.CheckIfSomeoneWinForPoker(stackL, grid, gameLaunch.pokerGame.totalBet, lblUserTokens);
+          MoneyInGame.Text = "Your money in game:" + gameLaunch.pokerGame.totalBet.ToString();
 
 
 
@@ -294,7 +294,7 @@ namespace Bingo_Casino
             {
                 loseAllGame();
             }
-            //User.AddMoney = User.AddMoney - Math.Abs(int.Parse(HowMuch.Text));
+           // gameLaunch.user.AddMoney = gameLaunch.user.AddMoney - Math.Abs(int.Parse(HowMuch.Text));
             //gameLaunch.SetMoney(lblUserTokens);
         }
 
@@ -332,9 +332,9 @@ namespace Bingo_Casino
             grid.Children.Clear();
             gameLaunch.blackJackGame.player.RemoveAll();
             gameLaunch.blackJackGame.dealer.RemoveAll();
-            gameLaunch.pokerGame.player.RemoveAll();
-            gameLaunch.pokerGame.pokerTable.RemoveAll();
-            gameLaunch.pokerGame.dealer.RemoveAll();
+          gameLaunch.pokerGame.player.RemoveAll();
+          gameLaunch.pokerGame.pokerTable.RemoveAll();
+          gameLaunch.pokerGame.dealer.RemoveAll();
             lblLoseGame.IsVisible = true;
             HeightScore.IsVisible = true;
             HeightScore.Text = "Your height score was: " + gameLaunch.user.HScore;
@@ -350,7 +350,6 @@ namespace Bingo_Casino
         }
         private void fold_Clicked(object sender, EventArgs e)
         {
-
 
             gameLaunch.pokerGame.GameOver(stackL, grid, true, gameLaunch.pokerGame.totalBet, lblUserTokens, true);
         }

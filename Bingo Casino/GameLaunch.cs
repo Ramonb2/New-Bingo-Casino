@@ -15,11 +15,7 @@ namespace Bingo_Casino
         public PokerGame pokerGame = new PokerGame();
         public Setting setting = new Setting();
         public User user = new User();
-
-
     }
-
-
 
 }
 

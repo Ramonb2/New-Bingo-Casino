@@ -58,7 +58,7 @@ xmlns:helpers="clr-namespace:Bingo_Casino.Helpers"
 
 
 
-        <Label x:Name="label" Text="Dealer" VerticalOptions="Start" FontSize="30" HorizontalOptions="Center"/>
+        <Label x:Name="label" Text="Dealer" VerticalOptions="Start" FontSize="30" HorizontalOptions="Center" IsVisible="false"/>
 
 
 
