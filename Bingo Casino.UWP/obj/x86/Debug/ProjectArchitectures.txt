@@ -1,1 +1,1 @@
-D:\minor\New-Bingo-Casino\Bingo Casino.UWP\Bingo Casino.UWP.csproj;x86
+C:\Users\Ramon\Documents\github\New-Bingo-Casino\Bingo Casino.UWP\Bingo Casino.UWP.csproj;x86

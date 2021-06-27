@@ -25,23 +25,50 @@ namespace Bingo_Casino
 
         private void BlackJack_Clicked(object sender, EventArgs e)
         {
-            Back.IsVisible = true;
             BlackJack.IsVisible = false;
             Poker.IsVisible = false;
             Settings.IsVisible = false;
-            hit.IsVisible = true;
-            stand.IsVisible = true;
-            one.IsVisible = true;
-            eleven.IsVisible = true;
             eleven.IsEnabled = false;
-            one.IsEnabled = true;
-            lbl1or11.IsVisible = true;
-            gameLaunch.blackJackGame.player.HowMuchForA = 11;
+            label.IsVisible = false;
+            lblHowMuch.IsVisible = true;
+            Back.IsVisible = true;
+
             // start the game
-            Start();
+            Play.IsVisible = true;
+            HowMuch.IsVisible = true;
 
 
         }
+
+        private void Play_Clicked(object sender, EventArgs e)
+        {
+            if (HowMuch.Text != null)
+            {
+
+                Back.IsVisible = true;
+                BlackJack.IsVisible = false;
+                Poker.IsVisible = false;
+                Settings.IsVisible = false;
+                hit.IsVisible = true;
+                stand.IsVisible = true;
+                one.IsVisible = true;
+                eleven.IsVisible = true;
+                eleven.IsEnabled = false;
+                one.IsEnabled = true;
+                lbl1or11.IsVisible = true;
+                label.IsVisible = true;
+                HowMuch.IsVisible = false;
+                Play.IsVisible = false;
+                lblHowMuch.IsVisible = false;
+                gameLaunch.blackJackGame.player.HowMuchForA = 11;
+
+
+
+                StartBL();
+            }
+
+        }
+
 
         private void Poker_Clicked(object sender, EventArgs e)
         {
@@ -137,7 +164,7 @@ namespace Bingo_Casino
         {
             gameLaunch.blackJackGame.player.Add(stackL, grid);
             gameLaunch.blackJackGame.dealer.Add(stackL, grid);
-            gameLaunch.blackJackGame.CheckIfSomeoneWinForHit(stackL, grid);
+            gameLaunch.blackJackGame.CheckIfSomeoneWinForHit(stackL, grid, Math.Abs(int.Parse(HowMuch.Text)), lblUserTokens);
             gameLaunch.setting.sound("zapsplat_leisure_playing_cards_dealing_table_001_20483 (mp3cut.net) (2).mp3");
 
         }
@@ -149,7 +176,7 @@ namespace Bingo_Casino
                 gameLaunch.blackJackGame.dealer.Add(stackL, grid);
                 if (gameLaunch.blackJackGame.player.cardsRank < gameLaunch.blackJackGame.dealer.get_cardRank() && gameLaunch.blackJackGame.dealer.get_cardRank() <= 21)
                 {
-                    gameLaunch.blackJackGame.GameOver(stackL, grid, true);
+                    gameLaunch.blackJackGame.GameOver(stackL, grid, Math.Abs(int.Parse(HowMuch.Text)),  true, lblUserTokens);
                     return;
 
                 }
@@ -160,13 +187,13 @@ namespace Bingo_Casino
             }
             if (gameLaunch.blackJackGame.player.cardsRank < gameLaunch.blackJackGame.dealer.get_cardRank() && gameLaunch.blackJackGame.dealer.get_cardRank() == 17)
             {
-                gameLaunch.blackJackGame.GameOver(stackL, grid, true);
+                gameLaunch.blackJackGame.GameOver(stackL, grid, Math.Abs(int.Parse(HowMuch.Text)), true, lblUserTokens);
                 return;
 
             }
             else
             {
-                gameLaunch.blackJackGame.CheckIfSomeoneWinForStep(stackL, grid);
+                gameLaunch.blackJackGame.CheckIfSomeoneWinForStep(stackL, grid, Math.Abs(int.Parse(HowMuch.Text)), lblUserTokens);
                 return;
             }
 
@@ -188,7 +215,7 @@ namespace Bingo_Casino
 
 
 
-        public void Start()
+        public void StartBL()
         {
             gameLaunch.blackJackGame.dealer.Add(stackL, grid);
             gameLaunch.blackJackGame.player.Add(stackL, grid);

@@ -13,6 +13,15 @@ namespace Bingo_Casino
         //create cards
         public Deck()
         {
+            List<Card> cards = new List<Card>();
+            makeCards();
+
+            shuffle();
+        }
+
+        void makeCards()
+        {
+            cards.Clear();
             cards.Add(new Card(Suit.Hearts, Rank.A));
             cards.Add(new Card(Suit.Hearts, Rank.c10));
             cards.Add(new Card(Suit.Hearts, Rank.c2));
@@ -68,8 +77,6 @@ namespace Bingo_Casino
             cards.Add(new Card(Suit.Spades, Rank.J));
             cards.Add(new Card(Suit.Spades, Rank.K));
             cards.Add(new Card(Suit.Spades, Rank.Q));
-
-            shuffle();
         }
 
         List<Card> shuffle()
@@ -105,22 +112,22 @@ namespace Bingo_Casino
 
         }
 
-        public Card deal()
+        public Card Deal()
         {
             Card firstCard;
             if (cards.Count == 0)
             {
-                cards = usedCards;
-                usedCards.Clear();
+                makeCards();
                 shuffle();
             }
 
             firstCard = cards[0];
-            usedCards.Add(cards[0]);
             cards.RemoveAt(0);
 
             return firstCard;
         }
+
+
 
         List<Card> GetDeck()
         {

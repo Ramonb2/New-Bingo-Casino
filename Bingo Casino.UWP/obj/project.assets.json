@@ -9795,7 +9795,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\R_Maz\\.nuget\\packages\\": {},
+    "C:\\Users\\Ramon\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\": {}
@@ -9803,11 +9803,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\minor\\New-Bingo-Casino\\Bingo Casino.UWP\\Bingo Casino.UWP.csproj",
+      "projectUniqueName": "C:\\Users\\Ramon\\Documents\\github\\New-Bingo-Casino\\Bingo Casino.UWP\\Bingo Casino.UWP.csproj",
       "projectName": "Bingo Casino.UWP",
-      "projectPath": "D:\\minor\\New-Bingo-Casino\\Bingo Casino.UWP\\Bingo Casino.UWP.csproj",
-      "packagesPath": "C:\\Users\\R_Maz\\.nuget\\packages\\",
-      "outputPath": "D:\\minor\\New-Bingo-Casino\\Bingo Casino.UWP\\obj\\",
+      "projectPath": "C:\\Users\\Ramon\\Documents\\github\\New-Bingo-Casino\\Bingo Casino.UWP\\Bingo Casino.UWP.csproj",
+      "packagesPath": "C:\\Users\\Ramon\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Ramon\\Documents\\github\\New-Bingo-Casino\\Bingo Casino.UWP\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -9816,7 +9816,7 @@
         "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\R_Maz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Ramon\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -9831,8 +9831,8 @@
       "frameworks": {
         "uap10.0.16299": {
           "projectReferences": {
-            "D:\\minor\\New-Bingo-Casino\\Bingo Casino\\Bingo Casino.csproj": {
-              "projectPath": "D:\\minor\\New-Bingo-Casino\\Bingo Casino\\Bingo Casino.csproj"
+            "C:\\Users\\Ramon\\Documents\\github\\New-Bingo-Casino\\Bingo Casino\\Bingo Casino.csproj": {
+              "projectPath": "C:\\Users\\Ramon\\Documents\\github\\New-Bingo-Casino\\Bingo Casino\\Bingo Casino.csproj"
             }
           }
         }

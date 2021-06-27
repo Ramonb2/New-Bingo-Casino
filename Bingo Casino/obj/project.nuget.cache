@@ -1,17 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "MxMU/szpOG7jM4beigNdJtPtVruybY+L0n7gvmlZzjExrZWUWD+LWqHporVKbOmQYyYQFvHceYJqwsxm/A5Ehg==",
+  "dgSpecHash": "os6T7lvyRyFpeUX/8pWTtdMIP4pauNqhDZ0wzwy01UwsQO07kI8NllMO8znYGUL8Te9bUUHzp5RcnZkCuyPq3w==",
   "success": true,
-  "projectFilePath": "D:\\minor\\New-Bingo-Casino\\Bingo Casino\\Bingo Casino.csproj",
+  "projectFilePath": "C:\\Users\\Ramon\\Documents\\github\\New-Bingo-Casino\\Bingo Casino\\Bingo Casino.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\R_Maz\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
-    "C:\\Users\\R_Maz\\.nuget\\packages\\plugin.audiorecorder\\1.1.0\\plugin.audiorecorder.1.1.0.nupkg.sha512",
-    "C:\\Users\\R_Maz\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
-    "C:\\Users\\R_Maz\\.nuget\\packages\\wmplib\\1.0.0\\wmplib.1.0.0.nupkg.sha512",
-    "C:\\Users\\R_Maz\\.nuget\\packages\\xam.plugin.simpleaudioplayer\\1.4.0\\xam.plugin.simpleaudioplayer.1.4.0.nupkg.sha512",
-    "C:\\Users\\R_Maz\\.nuget\\packages\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
-    "C:\\Users\\R_Maz\\.nuget\\packages\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512"
+    "C:\\Users\\Ramon\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Ramon\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\Ramon\\.nuget\\packages\\plugin.audiorecorder\\1.1.0\\plugin.audiorecorder.1.1.0.nupkg.sha512",
+    "C:\\Users\\Ramon\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Ramon\\.nuget\\packages\\wmplib\\1.0.0\\wmplib.1.0.0.nupkg.sha512",
+    "C:\\Users\\Ramon\\.nuget\\packages\\xam.plugin.simpleaudioplayer\\1.4.0\\xam.plugin.simpleaudioplayer.1.4.0.nupkg.sha512",
+    "C:\\Users\\Ramon\\.nuget\\packages\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
+    "C:\\Users\\Ramon\\.nuget\\packages\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512"
   ],
   "logs": [
     {
