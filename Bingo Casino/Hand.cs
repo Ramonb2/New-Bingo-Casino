@@ -7,27 +7,17 @@ namespace Bingo_Casino
 {
     class Hand
     {
-        //BlackJackGame blackJackGame = new BlackJackGame();
-        Setting setting = new Setting();
-
-        //public Deck deck = new Deck();
-        //BlackJackGame blackJackGame = new BlackJackGame();
-
-
         public List<Card> hand = new List<Card>();
 
         public int HowMuchForA = 11;
 
-        public int cardsRank = 0;
+        public int cardsRank;
 
         public int MaxHandSize = 2;
 
-        public int get_cardRank()
-        {
-            return cardsRank;
-        }
 
-        public void addOneCardForP(Card card, StackLayout stack, Grid grid, bool dealer, bool middle,bool showImage=true)
+
+    public void addOneCardForP(Card card, StackLayout stack, Grid grid, bool dealer, bool middle,bool showImage=true)
         {
             if (middle == true && hand.Count >= 5)
             {
@@ -41,6 +31,7 @@ namespace Bingo_Casino
             Rank r = card.rank;
             string rank = r.ToString();
             int image_number = (int)r;
+            cardsRank = totalValueOfTheHand();
             switch (rank)
 
             {
@@ -127,119 +118,7 @@ namespace Bingo_Casino
 
             grid.Children.Add(m);
         }
-        public void addOneCard(Card card, StackLayout stack, Grid grid, bool dealer)
-        {
-            if (dealer == true && cardsRank > 17)
-            {
-                return;
-            }
-            //add ranks to cardsRank
-            if ((int)card.rank == 1 && dealer == false)
-            {
-                cardsRank = cardsRank + HowMuchForA;
-            }
-            else
-            {
-                cardsRank = cardsRank + (int)card.rank;
-            }
-
-
-
-            hand.Add(card);
-
-            Suit s = card.suit;
-            Rank r = card.rank;
-
-
-            //add image
-            Image m = new Image();
-
-            var assembly = typeof(MainPage);
-            string fileName = "";
-            string NameOfImage = "imageonline-co-split-image (" + ((int)r - 1) + ").png";
-
-
-            switch ((int)s)
-            {
-                case 1:
-                    fileName = "Bingo_Casino.Assets.Images.cards2.";
-                    break;
-
-                case 2:
-                    fileName = "Bingo_Casino.Assets.Images.cards.";
-                    break;
-
-                case 3:
-                    fileName = "Bingo_Casino.Assets.Images.cards1.";
-                    break;
-
-                case 4:
-                    fileName = "Bingo_Casino.Assets.Images.cards3.";
-                    break;
-            }
-            m.Source = ImageSource.FromResource(fileName + NameOfImage, assembly);
-            m.HeightRequest = (int)(stack.Height * 0.15);
-
-
-            //calculate points of images
-            double translateX = 0;
-            double translateY = 0;
-
-
-            if (dealer == false)
-            {
-                if (hand.Count <= 2)
-                {
-                    translateX = -(int)(stack.Height * 0.15) * hand.Count;
-                    translateY = stack.Height / 6 * 3;
-                }
-                else
-                {
-                    if (hand.Count < 7)
-                    {
-                        translateX = (int)(stack.Height * 0.15) * (hand.Count - 3);
-                        translateY = stack.Height / 6 * 3;
-                    }
-                    else
-                    {
-                        translateX = (int)(stack.Height * 0.2) * (hand.Count - 9);
-                        translateY = (stack.Height / 6 * 3) - (stack.Height * 0.15);
-                    }
-
-                }
-            }
-            else
-            {
-                if (hand.Count <= 2)
-                {
-                    translateX = -(int)(stack.Height * 0.15) * hand.Count;
-                    translateY = 0;
-                }
-                else
-                {
-                    if (hand.Count < 7)
-                    {
-                        translateX = (int)(stack.Height * 0.15) * (hand.Count - 3);
-                        translateY = 0;
-                    }
-                    else
-                    {
-                        translateX = (int)(stack.Height * 0.2) * (hand.Count - 9);
-                        translateY = (stack.Height / 6) - (stack.Height * 0.15);
-                    }
-
-                }
-
-
-                //m.TranslateTo(-stack.Width / 5, 0);
-            }
-
-
-            m.TranslateTo(translateX, translateY);
-
-            grid.Children.Add(m);
-        }
-
+        
         public void sort()
         {
             List<Card> hand1 = new List<Card>();
@@ -273,113 +152,21 @@ namespace Bingo_Casino
 
 
         }
-
-
-
-        public void addOneCardForBL(Card card, StackLayout stack, Grid grid, bool dealer)
+        public int totalValueOfTheHand()
         {
-            //add ranks to cardsRank
-            if ((int)card.rank == 1 && dealer == false)
+            cardsRank = 0;
+            foreach (Card c in hand)
             {
-                cardsRank = cardsRank + HowMuchForA;
+                Rank r = c.rank;
+                cardsRank += (int)r;
             }
-            else
-            {
-                if ((int)card.rank > 10)
-                {
-                    cardsRank = cardsRank + 10;
-                }
-                else
-                {
-                    cardsRank = cardsRank + (int)card.rank;
-                }
-            }
-            hand.Add(card); Suit s = card.suit;
-            Rank r = card.rank;
-            //add image
-            Image m = new Image();
-            var assembly = typeof(MainPage);
-            string fileName = "";
-            string NameOfImage = "imageonline-co-split-image (" + ((int)r - 1) + ").png";
 
-            switch ((int)s)
-            {
-                case 1:
-                    fileName = "Bingo_Casino.Assets.Images.cards2.";
-                    break;
-                case 2:
-                    fileName = "Bingo_Casino.Assets.Images.cards.";
-                    break;
-                case 3:
-                    fileName = "Bingo_Casino.Assets.Images.cards1.";
-                    break;
-                case 4:
-                    fileName = "Bingo_Casino.Assets.Images.cards3.";
-                    break;
-            }
-            m.Source = ImageSource.FromResource(fileName + NameOfImage, assembly);
-            m.HeightRequest = (int)(stack.Height * 0.15);
-            //calculate points of images
-            double translateX = 0;
-            double translateY = 0;
-            if (dealer == false)
-            {
-                if (hand.Count <= 2)
-                {
-                    translateX = -(int)(stack.Height * 0.15) * hand.Count;
-                    translateY = stack.Height / 6 * 4;
-                }
-                else
-                {
-                    if (hand.Count < 7)
-                    {
-                        translateX = (int)(stack.Height * 0.15) * (hand.Count - 3);
-                        translateY = stack.Height / 6 * 4;
-                    }
-                    else
-                    {
-                        translateX = (int)(stack.Height * 0.2) * (hand.Count - 9);
-                        translateY = (stack.Height / 6 * 4) - (stack.Height * 0.15);
-                    }
-                }
-            }
-            else
-            {
-                if (hand.Count <= 2)
-                {
-                    translateX = -(int)(stack.Height * 0.15) * hand.Count;
-                    translateY = 0;
-                }
-                else
-                {
-                    if (hand.Count < 7)
-                    {
-                        translateX = (int)(stack.Height * 0.15) * (hand.Count - 3);
-                        translateY = 0;
-                    }
-                    else
-                    {
-                        translateX = (int)(stack.Height * 0.2) * (hand.Count - 9);
-                        translateY = (stack.Height / 6) - (stack.Height * 0.15);
-                    }
-                }
-                //m.TranslateTo(-stack.Width / 5, 0);
-            }
-            m.TranslateTo(translateX, translateY, 300); grid.Children.Add(m);
+            return cardsRank;
         }
 
-        public void addCards(List<Card> cards)
+        public int hand_count()
         {
-            foreach (Card c in cards)
-            {
-                hand.Add(c);
-            }
+            return hand.Count;
         }
-
-        public int totalValueOfTheHand
-        {
-            get { return hand.Count; }
-        }
-
     }
 }

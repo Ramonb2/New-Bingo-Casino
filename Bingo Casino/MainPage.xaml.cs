@@ -130,8 +130,9 @@ namespace Bingo_Casino
         private void hit_Clicked(object sender, EventArgs e)
         {
             gameLaunch.setting.sound("cardSound.mp3");
-            gameLaunch.blackJackGame.player.add(stackL, grid, gameLaunch.blackJackGame.deck);
-            gameLaunch.blackJackGame.CheckIfSomeoneWinForHit(stackL, grid, Math.Abs(int.Parse(HowMuch.Text)), lblUserTokens);
+            gameLaunch.blackJackGame.addCard2Hand(stackL, grid, "player");
+            //gameLaunch.blackJackGame.player.add(stackL, grid, gameLaunch.blackJackGame.deck);
+            gameLaunch.blackJackGame.CheckIfSomeoneWinForStep(stackL, grid, Math.Abs(int.Parse(HowMuch.Text)), lblUserTokens);
 
             if (gameLaunch.user.addMoney < 0)
             {
@@ -143,7 +144,8 @@ namespace Bingo_Casino
         private void stand_Clicked(object sender, EventArgs e)
         {
             gameLaunch.setting.sound("cardSound.mp3");
-            gameLaunch.blackJackGame.dealer.addBL(stackL, grid, true, gameLaunch.blackJackGame.deck);
+            gameLaunch.blackJackGame.addCard2Hand(stackL, grid, "dealer",true);
+            // gameLaunch.blackJackGame.dealer.addBL(stackL, grid, true, gameLaunch.blackJackGame.deck);
             gameLaunch.blackJackGame.CheckIfSomeoneWinForStep(stackL, grid, Math.Abs(int.Parse(HowMuch.Text)), lblUserTokens);
             if (gameLaunch.user.addMoney < 0)
             {
@@ -166,9 +168,12 @@ namespace Bingo_Casino
         }
         public void StartBL()
         {
-            gameLaunch.blackJackGame.dealer.addBL(stackL, grid, false, gameLaunch.blackJackGame.deck);
-            gameLaunch.blackJackGame.player.add(stackL, grid, gameLaunch.blackJackGame.deck);
-            gameLaunch.blackJackGame.player.add(stackL, grid, gameLaunch.blackJackGame.deck);
+           // gameLaunch.blackJackGame.dealer.addBL(stackL, grid, false, gameLaunch.blackJackGame.deck);
+           // gameLaunch.blackJackGame.player.add(stackL, grid, gameLaunch.blackJackGame.deck);
+           // gameLaunch.blackJackGame.player.add(stackL, grid, gameLaunch.blackJackGame.deck);
+            gameLaunch.blackJackGame.addCard2Hand(stackL, grid, "dealer");
+            gameLaunch.blackJackGame.addCard2Hand(stackL, grid, "player");
+            gameLaunch.blackJackGame.addCard2Hand(stackL, grid, "player");
         }
 
         public void StartP()
