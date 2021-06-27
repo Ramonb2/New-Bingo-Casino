@@ -14,7 +14,10 @@ namespace Bingo_Casino
         public BlackJackGame blackJackGame = new BlackJackGame();
         public PokerGame pockerGame = new PokerGame();
         public Setting setting = new Setting();
+
+
     }
+
 
 
 }
